@@ -26,8 +26,8 @@ const LoginForm = () => {
         value={userName}
         type="text"
         required
-        placeholder="Entrez votre prénom..." />
-      <button type="submit">Accéder à votre espace</button>
+        placeholder="Entrez votre prénom" />
+      <button type="submit">Accéder à mon espace</button>
     </form>
   )
 }
