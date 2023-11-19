@@ -78,8 +78,8 @@ const LoginFormstyled = styled.form`
       background: transparent;
       caret-color: rgb(0, 0, 0);;
       &::placeholder {
-        color: #755377;
-        font-size: 1.5rem;
+        color: rgba(0, 0, 0,0.5);;
+        font-size: 1.2rem;
       }
     }
   }
