@@ -1,7 +1,9 @@
-import { FormEvent, useState } from "react"
+import { FormEvent , useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
 import styled from "styled-components";
+import InputForm from "./InputForm";
+import TitleForm from "./TitleForm";
 
 const LoginForm = () => {
   //State
@@ -20,19 +22,8 @@ const LoginForm = () => {
   //JSX
   return (
     <LoginFormstyled onSubmit={(e) => handleSubmit(e)}>
-      <h1 title="Bienvenue chez vous">Bienvenue chez vous!</h1>
-      <hr />
-      <h2 title="Connectez vous">Connectez vous</h2>
-      <div className="input-container"> 
-      <BsPersonCircle  className="icon"/>
-        <input
-          onChange={(e) => setUserName(e.target.value)}
-          name="username"
-          value={userName}
-          type="text"
-          required
-          placeholder="Entrez votre prénom" title="Entrez votre prénom"/>
-      </div>
+      <TitleForm />
+      <InputForm icon={<BsPersonCircle className="icon" />} onChange={(e) => setUserName(e.target.value)} value={userName} placeholder="Entrez votre prénom" title="Entrer son prénom" name="username"/>
       <button type="submit" title="Accéder à mon espace">Accéder à mon espace</button>
     </LoginFormstyled>
   )
@@ -48,41 +39,6 @@ const LoginFormstyled = styled.form`
   height: 340px;
   padding: 0 2rem;
   margin: 0 auto;
-  h1 {
-    color: white;
-    font-size: 3rem;
-  }
-  hr {
-    border : 2px solid #755377;
-  }
-  h2 {
-    color: white;
-    font-size: 2.2rem;
-  }
-  .input-container {
-    background: rgba(252, 227, 213,0.5);
-    padding: 0.5rem 0;
-    width: 100%;
-    .icon {
-      color: rgba(0, 0, 0,0.5);
-      margin-right: 1rem;
-    }
-    input { 
-      width: 80%;
-      margin: 0;
-      border: none;
-      border-bottom: 2px solid #755377;
-      outline: none;
-      color: rgba(0, 0, 0,0.5);
-      font-size: 1.5rem;
-      background: transparent;
-      caret-color: rgb(0, 0, 0);;
-      &::placeholder {
-        color: rgba(0, 0, 0,0.5);;
-        font-size: 1.2rem;
-      }
-    }
-  }
   button {
     cursor: pointer;
     margin-top: 2rem;
