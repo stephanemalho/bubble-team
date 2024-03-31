@@ -9,7 +9,7 @@ const LoginPage = () => {
   //JSX
   return (
     <FragmentStyled>
-      <Logo/>
+      <Logo size={5} rounded={8} />
       <LoginForm />
     </FragmentStyled>
   )

@@ -4,6 +4,7 @@ import { BsPersonCircle } from "react-icons/bs";
 import styled from "styled-components";
 import InputForm from "./InputForm";
 import TitleForm from "./TitleForm";
+import { string } from "../../constant";
 
 const LoginForm = () => {
   //State
@@ -23,8 +24,8 @@ const LoginForm = () => {
   return (
     <LoginFormstyled onSubmit={(e) => handleSubmit(e)}>
       <TitleForm />
-      <InputForm icon={<BsPersonCircle className="icon" />} onChange={(e) => setUserName(e.target.value)} value={userName} placeholder="Entrez votre prénom" title="Entrer son prénom" name="username"/>
-      <button type="submit" title="Accéder à mon espace">Accéder à mon espace</button>
+      <InputForm icon={<BsPersonCircle className="icon" />} onChange={(e) => setUserName(e.target.value)} value={userName} placeholder={string.Input.placeholder} title={string.Input.placeholder} name="username"/>
+      <button type="submit" title={string.Button.loginText}>{string.Button.loginText}</button>
     </LoginFormstyled>
   )
 }
