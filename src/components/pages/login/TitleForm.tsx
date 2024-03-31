@@ -1,12 +1,13 @@
 import styled from "styled-components";
+import { string } from "../../constant";
 
 
 const TitleForm = () => {
   return (
     <TitleFormStyled>
-      <h1 title="Bienvenue chez vous">Bienvenue chez vous!</h1>
+      <h1 title={string.TitleText.loginMain}>{string.TitleText.loginMain}</h1>
       <hr />
-      <h2 title="Connectez vous">Connectez vous</h2>
+      <h2 title={string.TitleText.loginSub}>{string.TitleText.loginSub}</h2>
     </TitleFormStyled>
   )
 }

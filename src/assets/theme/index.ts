@@ -4,7 +4,7 @@ const colors = {
   white: "#fff",
   background_white: "#f5f5f7",
   background_dark: "#292729",
-  primary: "#ffa01b",
+  primary: "#221202",
   primary_burger: "#ff9f1b",
   green: "green",
   success: "#60bd4f",
@@ -28,6 +28,11 @@ const spacing = {
   xxl: "84px",
 }
 
+const letterSpacing = {
+  title: "0.1px",
+  button: "1px",
+}
+
 const fonts = {
   XXXS: "8px",
   XXS: "10px",
@@ -47,7 +52,9 @@ const borderRadius = {
   extraRound: "15px",
   circle: "50%",
 }
-const shadows = {}
+const shadows = {
+  title : "1px 1px 0px rgb(255, 255, 255)"
+}
 const weights = {
   light: 300,
   regular: 400,
@@ -57,12 +64,21 @@ const weights = {
   heavy: 800,
 }
 
+const border = {
+  light: `1px solid ${colors.greyLight}`,
+  medium: `1px solid ${colors.greyMedium}`,
+  dark: `1px solid ${colors.greyDark}`,
+  white : `2px solid ${colors.white}`
+}
+
 export const theme = {
+  border,
+  borderRadius,
   colors,
   fonts,
   gridUnit,
-  borderRadius,
+  letterSpacing,
   shadows,
-  weights,
   spacing,
+  weights,
 }
