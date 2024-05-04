@@ -2,7 +2,7 @@ const colors = {
   dark: "#17161a",
   incognito: "#333",
   white: "#fff",
-  background_white: "#f5f5f7",
+  background_white: "#fef7ff",
   background_dark: "#292729",
   primary: "#221202",
   primary_bubble: "#755377",
@@ -18,7 +18,8 @@ const colors = {
   greyBlue: "#747b91",
   lighterShade: '#8a6898',
   darkerShade: '#5e2f60',
-  primaryGradient: `linear-gradient(45deg, #8a6898, #5e2f60)`, // gradient ajouté ici
+  primaryGradient: `linear-gradient(45deg, #875F8B, #B493B8)`, 
+  violeto: "#875F8B",
 }
 
 
