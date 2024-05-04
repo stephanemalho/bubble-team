@@ -25,6 +25,7 @@ export default Title
 const TitleStyled = styled.div<TitleProps>`
   display: flex;
   align-items: center;
+  font-family: "Amatic sc", openSans;
   h1 {
     display: inline;
     text-align: center;

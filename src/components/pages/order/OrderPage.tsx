@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import Main from "./Main";
+import { theme } from "../../../assets/theme";
 
 const OrderPage = () => {
   return (
@@ -16,7 +17,7 @@ const OrderPage = () => {
 export default OrderPage
 
 const OrderPageStyled = styled.div`
-  background-color: orange;
+  background: ${theme.colors.primaryGradient}; // utilisation du gradient
   height: 100vh;
   display: flex;
   justify-content: center;

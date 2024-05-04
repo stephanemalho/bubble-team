@@ -18,6 +18,7 @@ const TitleFormStyled = styled.div`
   h1 {
     color: white;
     font-size: 3rem;
+    font-family: "Amatic sc", openSans;
   }
   hr {
     border : 2px solid #755377;
@@ -25,5 +26,6 @@ const TitleFormStyled = styled.div`
   h2 {
     color: white;
     font-size: 2.2rem;
+    font-family: "Amatic sc", openSans;
   }
 `;
