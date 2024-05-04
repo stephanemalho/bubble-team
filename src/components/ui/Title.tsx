@@ -32,7 +32,7 @@ const TitleStyled = styled.div<TitleProps>`
     color: ${theme.colors.primary};
     font-size: ${(props) => props.size}rem;
     line-height: 1em;
-    font-weight: ${theme.weights.bold};
+    font-weight: ${theme.fonts.weights.bold};
     text-transform: uppercase;
     letter-spacing: ${theme.letterSpacing.title};
     text-shadow: ${theme.shadows.title};

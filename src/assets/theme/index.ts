@@ -39,18 +39,30 @@ const letterSpacing = {
   button: "1px",
 }
 
+
 const fonts = {
-  XXXS: "8px",
-  XXS: "10px",
-  XS: "12px",
-  P0: "15px",
-  P1: "18px",
-  P2: "20px",
-  P3: "24px",
-  P4: "36px",
-  P5: "48px",
-  P6: "60px",
+  size: {
+    XXXS: "8px",
+    XXS: "10px",
+    XS: "12px",
+    P0: "15px",
+    P1: "18px",
+    P2: "20px",
+    P3: "24px",
+    P4: "36px",
+    P5: "48px",
+    P6: "60px",
+  },
+  weights: {
+    light: 300,
+    regular: 400,
+    medium: 500,
+    semiBold: 600,
+    bold: 700,
+    heavy: 800,
+  },
 }
+
 const gridUnit = 8
 const borderRadius = {
   subtle: 1,
@@ -60,14 +72,6 @@ const borderRadius = {
 }
 const shadows = {
   title : "1px 1px 0px rgb(255, 255, 255)"
-}
-const weights = {
-  light: 300,
-  regular: 400,
-  medium: 500,
-  semiBold: 600,
-  bold: 700,
-  heavy: 800,
 }
 
 const border = {
@@ -86,5 +90,4 @@ export const theme = {
   letterSpacing,
   shadows,
   spacing,
-  weights,
 }
