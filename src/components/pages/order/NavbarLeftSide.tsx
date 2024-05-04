@@ -11,4 +11,5 @@ export default function NavbarLeftSide() {
 
 const NavbarLeftSideStyled = styled.div`
       background-color: pink;
+      height: 100%;
 `;

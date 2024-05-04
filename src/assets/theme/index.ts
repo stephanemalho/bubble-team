@@ -5,7 +5,7 @@ const colors = {
   background_white: "#f5f5f7",
   background_dark: "#292729",
   primary: "#221202",
-  primary_burger: "#ff9f1b",
+  primary_bubble: "#755377",
   green: "green",
   success: "#60bd4f",
   red: "#e25549",
@@ -16,7 +16,12 @@ const colors = {
   greySemiDark: "#93a2b1",
   greyDark: "#6f737e",
   greyBlue: "#747b91",
+  lighterShade: '#8a6898',
+  darkerShade: '#5e2f60',
+  primaryGradient: `linear-gradient(45deg, #8a6898, #5e2f60)`, // gradient ajouté ici
 }
+
+
 
 const spacing = {
   xxs: "4px",
