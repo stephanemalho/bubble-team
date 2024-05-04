@@ -16,6 +16,6 @@ const NavbarStyled = styled.nav`
       height: 10vh;
       display: flex;
       justify-content: space-between;
-      align-items: center; 
-      padding: 0 1rem;
+      /* align-items: center;  */
+      padding: 0 20px;
 `;

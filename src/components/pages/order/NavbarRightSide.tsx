@@ -1,20 +1,27 @@
 
-import { Link, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import styled from "styled-components";
-import { string } from "../../constant";
+import Profile from "./Profile";
 
 export default function NavbarRightSide() {
   const { username } = useParams();
   return (
     <NavbarRightSideStyled className="right-side">
-      <h1>{string.TitleText.hello} {username}</h1>
-      <Link to="/">
-        <button>{string.Button.returnLogin}</button>
-      </Link>
+      {/* <div className="admin-button">Admin button</div> */}
+      <Profile username={username} />
     </NavbarRightSideStyled>
   )
 }
 
 const NavbarRightSideStyled = styled.div`
+       display: flex;
+       align-items: center;
+       padding-right: 50px;
         background-color: yellow;
+        /* .admin-button {
+          background-color: red;
+        } */
+        .profile {
+          background-color: orange;
+        }
 `;

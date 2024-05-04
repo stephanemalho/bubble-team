@@ -5,6 +5,7 @@ import styled from "styled-components";
 import InputForm from "./InputForm";
 import TitleForm from "./TitleForm";
 import { string } from "../../constant";
+import { theme } from "../../../assets/theme";
 
 const LoginForm = () => {
   //State
@@ -44,22 +45,21 @@ const LoginFormstyled = styled.form`
     cursor: pointer;
     margin-top: 2rem;
     padding: 0.5rem 1rem;
-    background: #755377;
+    background: ${theme.colors.primaryGradient};
     border: 2px solid rgba(0, 0, 0,0.5);
     color: white;
     font-size: 1.5rem;
     cursor: pointer;
     transition: 0.3s;
     &:hover {
-      background: rgb(120, 91, 121);
+      background:  ${theme.colors.primary_bubble};
       color: white;
       border: 2px solid white;
     }
     &:active {
-      background: rgb(60, 40, 60);
+      background:  ${theme.colors.primaryGradient};
       color: white;
       border: 2px solid white;
-      scale: 0.9;
     }
   }
 `;

@@ -1,6 +1,6 @@
 const Button = {
   loginText: "Accéder à mon espace",
-  returnLogin: "Retour à la page d'accueil",
+  returnLogin: "Déconnexion",
 }
 const Images = {
   alt: 'logoTitle',
