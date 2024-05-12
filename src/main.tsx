@@ -10,4 +10,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <App />
     </BrowserRouter>
   </React.StrictMode>,
-)
+) // F05 Afficher les produits du menu - live ama 2/5 video 0min
