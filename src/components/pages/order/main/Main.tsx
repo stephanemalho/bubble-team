@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { theme } from "../../../../assets/theme";
+import Menu from "./Menu";
 
 export default function Main() {
   return (
     <MainStyled className="main">
-      <div className="basket">Basket</div>
-      <div className="menu">Menu</div>
+      {/* <div className="basket">Basket</div> */}
+      <Menu />
     </MainStyled>
   )
 }
@@ -16,13 +17,9 @@ const MainStyled = styled.main`
     flex: 1;
 
     display: grid;
-    grid-template-columns: 25% 1fr;
+    grid-template-columns: 1fr;
 
-    .basket {
+    /* .basket {
       background-color: pink;
-    }
-
-    .menu {
-      background-color: purple;
-    }
+    } */
 `;
