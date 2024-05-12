@@ -11,13 +11,13 @@ const colors = {
   red: "#e25549",
   redSecondary: "#c4151c",
   blue: "#51a7e1",
-  greyLight: "#e4e5e9",
   greyMedium: "#a7a8ad",
   greySemiDark: "#93a2b1",
   greyDark: "#6f737e",
   greyBlue: "#747b91",
   lighterShade: '#8a6898',
   darkerShade: '#5e2f60',
+  purpleLight: "#f5e3f7",
   primaryGradient: `linear-gradient(45deg, #875F8B, #B493B8)`, 
   violeto: "#875F8B",
 }
@@ -39,18 +39,30 @@ const letterSpacing = {
   button: "1px",
 }
 
+
 const fonts = {
-  XXXS: "8px",
-  XXS: "10px",
-  XS: "12px",
-  P0: "15px",
-  P1: "18px",
-  P2: "20px",
-  P3: "24px",
-  P4: "36px",
-  P5: "48px",
-  P6: "60px",
+  size: {
+    XXXS: "8px",
+    XXS: "10px",
+    XS: "12px",
+    P0: "15px",
+    P1: "18px",
+    P2: "20px",
+    P3: "24px",
+    P4: "36px",
+    P5: "48px",
+    P6: "60px",
+  },
+  weights: {
+    light: 300,
+    regular: 400,
+    medium: 500,
+    semiBold: 600,
+    bold: 700,
+    heavy: 800,
+  },
 }
+
 const gridUnit = 8
 const borderRadius = {
   subtle: 1,
@@ -61,17 +73,9 @@ const borderRadius = {
 const shadows = {
   title : "1px 1px 0px rgb(255, 255, 255)"
 }
-const weights = {
-  light: 300,
-  regular: 400,
-  medium: 500,
-  semiBold: 600,
-  bold: 700,
-  heavy: 800,
-}
 
 const border = {
-  light: `1px solid ${colors.greyLight}`,
+  light: `1px solid ${colors.purpleLight}`,
   medium: `1px solid ${colors.greyMedium}`,
   dark: `1px solid ${colors.greyDark}`,
   white : `2px solid ${colors.white}`
@@ -86,5 +90,4 @@ export const theme = {
   letterSpacing,
   shadows,
   spacing,
-  weights,
 }
