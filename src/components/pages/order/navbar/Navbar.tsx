@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import NavbarLeftSide from "./NavbarLeftSide";
 import NavbarRightSide from "./NavbarRightSide";
-import { theme } from "../../../assets/theme";
+import { theme } from "../../../../assets/theme";
 
 export default function Navbar() {
   return (

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Navbar from "./Navbar";
-import Main from "./Main";
+import Navbar from "./navbar/Navbar";
+import Main from "./main/Main";
 import { theme } from "../../../assets/theme";
 
 const OrderPage = () => {

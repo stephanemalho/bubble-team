@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import Title from '../../ui/Title';
-import { refreshWindow } from '../../../utils/window';
+import Title from '../../../ui/Title';
+import { refreshWindow } from '../../../../utils/window';
 
 export default function NavbarLeftSide() {
   return (
