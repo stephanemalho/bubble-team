@@ -3,9 +3,9 @@ export type MenuItem = {
   imageSource: string;
   title: string;
   price: number;
-  quantity: number;
-  isAvailable: boolean;
-  isAdvertised: boolean;
+  quantity?: number;
+  isAvailable?: boolean;
+  isAdvertised?: boolean;
 };
 
 
@@ -33,7 +33,7 @@ export const fakeMenu1: MenuItem[] = [
 export const fakeMenu2: MenuItem[] = [
   {
     id: 1,
-    imageSource: "/images/bubble-pink.png",
+    imageSource: "/images/bubble-oolong.png",
     title: "Bubble Pink",
     price: 5.598,
     quantity: 0,

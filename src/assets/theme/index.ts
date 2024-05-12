@@ -11,13 +11,13 @@ const colors = {
   red: "#e25549",
   redSecondary: "#c4151c",
   blue: "#51a7e1",
-  greyLight: "#e4e5e9",
   greyMedium: "#a7a8ad",
   greySemiDark: "#93a2b1",
   greyDark: "#6f737e",
   greyBlue: "#747b91",
   lighterShade: '#8a6898',
   darkerShade: '#5e2f60',
+  purpleLight: "#f5e3f7",
   primaryGradient: `linear-gradient(45deg, #875F8B, #B493B8)`, 
   violeto: "#875F8B",
 }
@@ -75,7 +75,7 @@ const shadows = {
 }
 
 const border = {
-  light: `1px solid ${colors.greyLight}`,
+  light: `1px solid ${colors.purpleLight}`,
   medium: `1px solid ${colors.greyMedium}`,
   dark: `1px solid ${colors.greyDark}`,
   white : `2px solid ${colors.white}`
