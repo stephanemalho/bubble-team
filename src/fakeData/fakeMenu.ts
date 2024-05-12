@@ -1,8 +1,19 @@
-export const fakeMenu1 = [
+export type MenuItem = {
+  id: number;
+  imageSource: string;
+  title: string;
+  price: number;
+  quantity: number;
+  isAvailable: boolean;
+  isAdvertised: boolean;
+};
+
+
+export const fakeMenu1: MenuItem[] = [
   {
     id: 1,
-    imageSource: "/images/burger1.png",
-    title: "Burger 1",
+    imageSource: "/images/bubble-oolong.png",
+    title: "Oolong cha",
     price: 5.297,
     quantity: 0,
     isAvailable: true,
@@ -19,7 +30,7 @@ export const fakeMenu1 = [
   },
 ]
 
-export const fakeMenu2 = [
+export const fakeMenu2: MenuItem[] = [
   {
     id: 1,
     imageSource: "/images/bubble-pink.png",
