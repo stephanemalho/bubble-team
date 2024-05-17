@@ -1,27 +1,32 @@
 import styled from "styled-components";
-import { MenuItem } from "../../../../fakeData/fakeMenu";
 import { theme } from "../../../../assets/theme";
-import PrimaryButton from "../../../ui/PrimaryButton";
 
-export default function Card({ id, title, imageSource, leftDescription }: MenuItem) {
+type CardProps<T> = {
+  item: T & { id: number; title: string; imageSource: string; leftDescription: string };
+  renderRightDescription: (item: T) => React.ReactNode;
+};
+
+export default function Card<T>({ item, renderRightDescription }: CardProps<T>) {
+  const { title, imageSource, leftDescription } = item;
+
   return (
-    <CardStyled key={id} className="menu-Card">
-      <div className="image"><img src={imageSource} alt={title} /></div>
+    <CardStyled className="menu-Card">
+      <div className="image">
+        <img src={imageSource} alt={title} />
+      </div>
       <div className="text-info">
         <div className="title">{title}</div>
         <div className="description">
           <div className="left-description">{leftDescription}</div>
-          <div className="right-description">
-            <PrimaryButton className="primary-button" label={"Ajouter"} />
-          </div>
+          <div className="right-description">{renderRightDescription(item)}</div>
         </div>
       </div>
     </CardStyled>
-  )
+  );
 }
 
 const CardStyled = styled.div`
-background: transparent;
+  background: transparent;
   width: 200px;
   height: 300px;
   display: grid;
@@ -94,4 +99,4 @@ background: transparent;
       }
     }
   }
-`
+`;
