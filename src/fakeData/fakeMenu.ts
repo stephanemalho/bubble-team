@@ -6,6 +6,7 @@ export type MenuItem = {
   quantity?: number;
   isAvailable?: boolean;
   isAdvertised?: boolean;
+  leftDescription?: string;
 };
 
 
