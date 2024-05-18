@@ -1,16 +1,16 @@
 import styled from "styled-components";
+import { MenuType } from "../../../../fakeData/fakeMenu";
 import { theme } from "../../../../assets/theme";
 
-type CardProps<T> = {
-  item: T & { id: number; title: string; imageSource: string; leftDescription: string };
+export type CardItemProps<T extends MenuType> = {
+  item: T;
   renderRightDescription: (item: T) => React.ReactNode;
 };
 
-export default function Card<T>({ item, renderRightDescription }: CardProps<T>) {
+export default function CardItem<T extends MenuType>({ item, renderRightDescription }: CardItemProps<T>) {
   const { title, imageSource, leftDescription } = item;
-
   return (
-    <CardStyled className="menu-Card">
+    <CardItemStyled>
       <div className="image">
         <img src={imageSource} alt={title} />
       </div>
@@ -21,27 +21,19 @@ export default function Card<T>({ item, renderRightDescription }: CardProps<T>) 
           <div className="right-description">{renderRightDescription(item)}</div>
         </div>
       </div>
-    </CardStyled>
+    </CardItemStyled>
   );
 }
 
-const CardStyled = styled.div`
-  background: transparent;
-  width: 200px;
-  height: 300px;
+const CardItemStyled = styled.div`
   display: grid;
-  grid-template-rows: 65% 1fr;
-  padding: 20px;
-  padding-bottom: 10px;
-  box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
-  border-radius: ${theme.borderRadius.extraRound};
-
-  .image {
+  grid-template-rows: 2fr 1fr;
+  position: relative;
+  
+.image {
     width: 100%;
-    height: auto;
-    margin-top: 30px;
-    margin-bottom: 20px;
-
+    height: 180px;
+    padding-bottom: 10px;
     img {
       width: 100%;
       height: 100%;
@@ -72,7 +64,8 @@ const CardStyled = styled.div`
     .description {
       display: grid;
       grid-template-columns: 1fr 1fr;
-
+      height: 50px;
+      margin-top: 10px;
       .left-description {
         display: flex;
         justify-content: flex-start;
@@ -90,13 +83,9 @@ const CardStyled = styled.div`
         justify-content: flex-end;
         align-items: center;
         font-size: ${theme.fonts.size.P1};
-
-        .primary-button {
-          font-size: ${theme.fonts.size.XS};
-          cursor: pointer;
-          padding: 12px;
-        }
       }
     }
   }
+
+  
 `;
