@@ -1,19 +1,21 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { memo, useState } from "react";
 import { formatPrice } from "../../../../utils/math";
 import Card from "./Card";
 import PrimaryButton from "../../../ui/PrimaryButton";
-import { MenuItem, fakeMenu2 } from "../../../../fakeData/fakeMenu";
+import { fakeMenu2 } from "../../../../fakeData/fakeMenu";
 
 export default function Menu() {
   const [menu, setMenu] = useState(fakeMenu2);
 
   console.log('setMenu: ', setMenu)
 
+  const CardMemo = memo(Card)
+
   return (
     <MenuStyled className="menu">
       {menu.map((item) => (
-        <Card<MenuItem>
+        <CardMemo 
           key={item.id}
           item={{
             ...item,
