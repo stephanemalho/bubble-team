@@ -1,10 +1,10 @@
-import styled from "styled-components";
 import { memo, useState } from "react";
-import Card from "../../../ui/Card";
 import { fakeMenu2, MenuType } from "../../../../fakeData/fakeMenu";
-import CardItem from "./CardItem";
 import { formatPrice } from "../../../../utils/math";
+import styled from "styled-components";
+import Card from "../../../ui/Card";
 import PrimaryButton from "../../../ui/PrimaryButton";
+import CardItem from "./CardItem";
 
 
 export default function Menu() {
