@@ -17,17 +17,10 @@ export default function Menu() {
   return (
     <MenuStyled className="menu">
       {menu.map((item) => (
-        <CardMemo key={item.id} item={item}> {/* Added key and item prop */}
+        <CardMemo key={item.id} item={item}>
           <CardItem<MenuType>
-            item={{
-              ...item,
-              leftDescription: formatPrice(item.price)
-            }} // Added item prop
-            renderRightDescription={() => (
-              <PrimaryButton
-                label="Ajouter"
-              />
-            )}
+            item={{ ...item, leftDescription: formatPrice(item.price) }}
+            renderRightDescription={() => <PrimaryButton label="Ajouter" />}
           />
         </CardMemo>
       ))}
