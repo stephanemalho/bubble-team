@@ -1,4 +1,4 @@
-export type MenuItem = {
+export type MenuType = {
   id: number;
   imageSource: string;
   title: string;
@@ -9,8 +9,7 @@ export type MenuItem = {
   leftDescription?: string;
 };
 
-
-export const fakeMenu1: MenuItem[] = [
+export const fakeMenu1: MenuType[] = [
   {
     id: 1,
     imageSource: "/images/bubble-tea-masala.png",
@@ -29,9 +28,9 @@ export const fakeMenu1: MenuItem[] = [
     isAvailable: true,
     isAdvertised: false,
   },
-]
+];
 
-export const fakeMenu2: MenuItem[] = [
+export const fakeMenu2: MenuType[] = [
   {
     id: 1,
     imageSource: "/images/bubble-tea-masala.png",
@@ -80,7 +79,7 @@ export const fakeMenu2: MenuItem[] = [
   {
     id: 6,
     imageSource: "/images/bubble-strawberries.png",
-    title: "Bubble Tea Strawberries", 
+    title: "Bubble Tea Strawberries",
     price: 3.356,
     quantity: 0,
     isAvailable: true,
@@ -104,4 +103,4 @@ export const fakeMenu2: MenuItem[] = [
     isAvailable: true,
     isAdvertised: false,
   },
-]
+];

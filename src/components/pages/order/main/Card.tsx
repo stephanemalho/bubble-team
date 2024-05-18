@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { theme } from "../../../../assets/theme";
+import { MenuType } from "../../../../fakeData/fakeMenu";
 
 type CardProps<T> = {
-  item: T & { id: number; title: string; imageSource: string; leftDescription: string };
+  item: T & MenuType;
   renderRightDescription: (item: T) => React.ReactNode;
 };
 
