@@ -18,16 +18,15 @@ export default function PrimaryButton({ label, Icon, className } : PrimaryButton
 
 const PrimaryButtonStyled = styled.button`
   width: 100%;
+  height: auto;
   border: 1px solid red;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  position: relative; //is used in case you want to create interactive icons where an icon replaces the text label.
   white-space: nowrap; //prevents the text label from wrapping to the next line.
   text-decoration: none; //removes the text decoration in case you’re applying the .btn class to a link.
   line-height: 1;
-
-  padding: 18px 24px;
+  padding: 14px 24px;
   border-radius: 5px;
   font-size: 15px;
   font-weight: 800;
@@ -37,7 +36,7 @@ const PrimaryButtonStyled = styled.button`
 
   &:hover {
     background-color: ${theme.colors.primary_bubble};
-    text: ${theme.colors.white};
+    color: ${theme.colors.white};
     transition: all 200ms ease-out;
   }
   &:active {

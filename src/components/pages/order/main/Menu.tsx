@@ -1,30 +1,35 @@
 import styled from "styled-components";
 import { memo, useState } from "react";
+import Card from "../../../ui/Card";
+import { fakeMenu2, MenuType } from "../../../../fakeData/fakeMenu";
+import CardItem from "./CardItem";
 import { formatPrice } from "../../../../utils/math";
-import Card from "./Card";
 import PrimaryButton from "../../../ui/PrimaryButton";
-import { fakeMenu2 } from "../../../../fakeData/fakeMenu";
+
 
 export default function Menu() {
-  const [menu, setMenu] = useState(fakeMenu2);
+  const [menu, setMenu] = useState<MenuType[]>(fakeMenu2);
 
-  console.log('setMenu: ', setMenu)
+  !menu && console.log("Menu rendered", setMenu);
 
-  const CardMemo = memo(Card)
+  const CardMemo = memo(Card);
 
   return (
     <MenuStyled className="menu">
       {menu.map((item) => (
-        <CardMemo 
-          key={item.id}
-          item={{
-            ...item,
-            leftDescription: formatPrice(item.price),
-          }}
-          renderRightDescription={() => (
-            <PrimaryButton className="primary-button" label={"Ajouter"} />
-          )}
-        />
+        <CardMemo key={item.id} item={item}> {/* Added key and item prop */}
+          <CardItem<MenuType>
+            item={{
+              ...item,
+              leftDescription: formatPrice(item.price)
+            }} // Added item prop
+            renderRightDescription={() => (
+              <PrimaryButton
+                label="Ajouter"
+              />
+            )}
+          />
+        </CardMemo>
       ))}
     </MenuStyled>
   );
