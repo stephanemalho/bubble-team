@@ -1,47 +1,20 @@
 import styled from "styled-components";
-import { Product } from "../../../../fakeData/fakeMenu";
-import { theme } from "../../../../assets/theme";
+import { theme } from "../../../../../assets/theme";
+import { Product } from "../../../../../fakeData/fakeMenu";
 
-export type CardItemProps<T extends Product> = {
-  item: T;
-  renderRightDescription: (item: T) => React.ReactNode;
-};
-
-export default function CardItem<T extends Product>({ item, renderRightDescription }: CardItemProps<T>) {
-  const { title, imageSource, leftDescription } = item;
+export function CardDescription<T extends Product>(title: string, leftDescription: string | undefined, renderRightDescription: (item: T) => React.ReactNode, item: T) {
   return (
-    <CardItemStyled>
-      <div className="image">
-        <img src={imageSource} alt={title} />
+    <CardDescriptionStyled className="text-info">
+      <div className="title">{title}</div>
+      <div className="description">
+        <div className="left-description">{leftDescription}</div>
+        <div className="right-description">{renderRightDescription(item)}</div>
       </div>
-      <div className="text-info">
-        <div className="title">{title}</div>
-        <div className="description">
-          <div className="left-description">{leftDescription}</div>
-          <div className="right-description">{renderRightDescription(item)}</div>
-        </div>
-      </div>
-    </CardItemStyled>
+    </CardDescriptionStyled>
   );
 }
 
-const CardItemStyled = styled.div`
-  display: grid;
-  grid-template-rows: 2fr 1fr;
-  position: relative;
-  
-.image {
-    width: 100%;
-    height: 180px;
-    padding-bottom: 10px;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-  }
-
-  .text-info {
+const CardDescriptionStyled = styled.div`
     display: grid;
     grid-template-rows: 30% 70%;
     padding: 5px;
@@ -85,7 +58,4 @@ const CardItemStyled = styled.div`
         font-size: ${theme.fonts.size.P1};
       }
     }
-  }
-
-  
 `;

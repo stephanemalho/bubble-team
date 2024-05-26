@@ -4,7 +4,7 @@ import { formatPrice } from "../../../../utils/math";
 import styled from "styled-components";
 import Card from "../../../ui/Card";
 import PrimaryButton from "../../../ui/PrimaryButton";
-import CardItem from "./CardItem";
+import CardItem from "./CardItem/CardItem";
 
 
 export default function Menu() {
