@@ -38,11 +38,11 @@ const TitleStyled = styled.div<TitleProps>`
     text-shadow: ${theme.shadows.title};
   }
   img {
+    background: ${theme.colors.primary_bubble};
     object-fit: contain;
     object-position: center;
     height: ${(props) => props.rounded}rem;
     width: ${(props) => props.rounded}rem;
-    margin: 0 1rem;
     border-radius: ${theme.borderRadius.circle};
     border: ${theme.border.white};
   }

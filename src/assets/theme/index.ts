@@ -5,8 +5,8 @@ const colors = {
   background_white: "#fef7ff",
   background_dark: "#292729",
   primary: "#221202",
-  primary_bubble: "#755377",
-  green: "green",
+  primary_bubble: "#e0b5a9",
+  green: "#8FAC45",
   success: "#60bd4f",
   red: "#e25549",
   redSecondary: "#c4151c",
@@ -15,14 +15,13 @@ const colors = {
   greySemiDark: "#93a2b1",
   greyDark: "#6f737e",
   greyBlue: "#747b91",
-  lighterShade: '#8a6898',
-  darkerShade: '#5e2f60',
-  purpleLight: "#f5e3f7",
-  primaryGradient: `linear-gradient(45deg, #875F8B, #B493B8)`, 
-  violeto: "#875F8B",
-}
-
-
+  lighterShade: "#8a6898",
+  darkerShade: "#5e2f60",
+  purpleLight: "#F8A1A4",
+  primaryGradient: `linear-gradient(180deg,#221202, #F8A1A4)`,
+  pinky: "#ecc2b6",
+  lightPinky: "#f7e3de",
+};
 
 const spacing = {
   xxs: "4px",
@@ -32,13 +31,12 @@ const spacing = {
   lg: "32px",
   xl: "52px",
   xxl: "84px",
-}
+};
 
 const letterSpacing = {
   title: "0.1px",
-  button: "1px",
-}
-
+  button: "0.2px",
+};
 
 const fonts = {
   size: {
@@ -61,25 +59,25 @@ const fonts = {
     bold: 700,
     heavy: 800,
   },
-}
+};
 
-const gridUnit = 8
+const gridUnit = 8;
 const borderRadius = {
   subtle: 1,
   round: "5px",
   extraRound: "15px",
   circle: "50%",
-}
+};
 const shadows = {
-  title : "1px 1px 0px rgb(255, 255, 255)"
-}
+  title: "1px 1px 0px rgb(255, 255, 255)",
+};
 
 const border = {
-  light: `1px solid ${colors.purpleLight}`,
+  light: `1px solid ${colors.pinky}`,
   medium: `1px solid ${colors.greyMedium}`,
   dark: `1px solid ${colors.greyDark}`,
-  white : `2px solid ${colors.white}`
-}
+  white: `2px solid ${colors.white}`,
+};
 
 export const theme = {
   border,
@@ -90,4 +88,4 @@ export const theme = {
   letterSpacing,
   shadows,
   spacing,
-}
+};

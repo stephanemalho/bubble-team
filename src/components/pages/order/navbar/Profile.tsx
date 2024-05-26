@@ -14,10 +14,8 @@ export default function Profile({ username }: ProfileProps) {
         <p>
           Hey, <b>{username}</b>
         </p>
-        <Link to="/">
-          <div className="description">
-            <small>Se déconnecter</small>
-          </div>
+        <Link className="description" to="/">
+          <small>Se déconnecter</small>
         </Link>
       </div>
       <div className="picture">
@@ -32,6 +30,7 @@ const ProfileStyled = styled.div`
   align-items: center;
   justify-content: space-between;
   min-width: 100px;
+  padding-left: 50px;
 
   .info {
     text-align: right;
@@ -43,9 +42,8 @@ const ProfileStyled = styled.div`
         color: ${theme.colors.primary_bubble};
       }
     }
-    a {
-      text-decoration: none;
-      .description {
+    a , .description {
+        text-decoration: none;
         &:hover {
           text-decoration: underline;
           color: ${theme.colors.greyDark};
@@ -59,7 +57,6 @@ const ProfileStyled = styled.div`
           bottom: 2px;
         }
       }
-    }
   }
 
   .picture {
@@ -68,6 +65,6 @@ const ProfileStyled = styled.div`
     display: flex;
     height: 100%;
     font-size: ${theme.fonts.size.P4};
-    color: ${theme.colors.violeto};
+    color: ${theme.colors.pinky};
   }
 `

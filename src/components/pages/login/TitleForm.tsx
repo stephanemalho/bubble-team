@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { string } from "../../constant";
+import { theme } from "../../../assets/theme";
 
 
 const TitleForm = () => {
@@ -21,7 +22,7 @@ const TitleFormStyled = styled.div`
     font-family: "Amatic sc", openSans;
   }
   hr {
-    border : 2px solid #755377;
+    border : 2px solid ${theme.colors.purpleLight};
   }
   h2 {
     color: white;
