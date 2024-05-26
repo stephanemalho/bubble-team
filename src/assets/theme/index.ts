@@ -6,7 +6,7 @@ const colors = {
   background_dark: "#292729",
   primary: "#221202",
   primary_bubble: "#755377",
-  green: "green",
+  green: "#8FAC45",
   success: "#60bd4f",
   red: "#e25549",
   redSecondary: "#c4151c",
