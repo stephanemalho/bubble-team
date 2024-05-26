@@ -1,24 +1,34 @@
 
+import { useState } from "react";
 import { useParams } from "react-router-dom"
 import styled from "styled-components";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import Profile from "./Profile";
 import { theme } from "../../../../assets/theme";
 import ToggleButton from "../../../ui/ToggleButton";
-import { useState } from "react";
+import { runToast } from "./toast";
 
 export default function NavbarRightSide() {
-  const [isAdmin , setIsAdmin] = useState<boolean>(false);
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
   const { username } = useParams();
+  const showToast = runToast;
+
+  const isAdminMode = (prev: boolean | undefined): void => {
+    setIsAdmin(!prev);
+    !isAdmin && showToast();
+  };
 
   return (
     <NavbarRightSideStyled>
-      <ToggleButton 
+      <ToggleButton
         isChecked={isAdmin}
-        onToggle={(prev) => setIsAdmin(!prev)}
+        onToggle={isAdminMode}
         labelIfChecked="Désactiver le mode admin"
         labelIfUnchecked="Activer le mode admin"
       />
       <Profile username={username} />
+      <ToastContainer />
     </NavbarRightSideStyled>
   )
 }
@@ -30,11 +40,9 @@ const NavbarRightSideStyled = styled.div`
     .toaster {
     max-width: 300px;
   }
-
   .Toastify__toast.Toastify__toast-theme--dark.Toastify__toast--info {
-    background: ${theme.colors.background_dark};
+    background: ${theme.colors.violeto};
   }
-
   .body-toast {
     .Toastify__toast-icon.Toastify--animate-icon.Toastify__zoom-enter {
       margin-right: 20px;
@@ -43,5 +51,8 @@ const NavbarRightSideStyled = styled.div`
     div {
       line-height: 1.3em;
     }
+  }
+  .toastColor {
+    color : ${theme.colors.primary_bubble};
   }
 `;

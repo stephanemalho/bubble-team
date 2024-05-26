@@ -6,6 +6,7 @@ type ToggleButtonProps = {
   onToggle: (prev: boolean | undefined) => void
   labelIfChecked?: string
   labelIfUnchecked?: string
+  onClick?: () => void
 }
 
 export default function ToggleButton({
