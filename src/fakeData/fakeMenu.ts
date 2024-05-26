@@ -6,7 +6,7 @@ export type Product = {
   quantity?: number;
   isAvailable?: boolean;
   isAdvertised?: boolean;
-  leftDescription?: string;
+  topDescription?: string;
 };
 
 export const fakeMenu1: Product[] = [

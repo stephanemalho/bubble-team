@@ -50,14 +50,14 @@ const ToggleButtonStyled = styled.div`
       position: relative;
       font-size: ${theme.fonts.size.XXS};
       letter-spacing: 0.5px;
-      border: 2px solid ${theme.colors.primary_bubble};
+      border: 2px solid ${theme.colors.pinky};
       padding: 0;
       margin: 0;
       cursor: pointer;
       box-sizing: border-box;
       transition: all 500ms ease;
       border-radius: 30px; /* Rounded corners */
-      background: ${theme.colors.violeto};
+      background: ${theme.colors.pinky};
       box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1), /* Inner shadow for relief */
                   0 4px 6px rgba(0, 0, 0, 0.1); /* Outer shadow */
     }
@@ -71,7 +71,7 @@ const ToggleButtonStyled = styled.div`
       transition: all 500ms ease;
       z-index: 3;
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, ${theme.colors.purpleLight}, ${theme.colors.violeto});
+      background: radial-gradient(circle at 30% 30%, ${theme.colors.lightPinky}, ${theme.colors.pinky} 33%);
       box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1), /* Inner shadow for 3D effect */
                   0 4px 6px rgba(0, 0, 0, 0.1); /* Outer shadow */
     }
@@ -89,7 +89,7 @@ const ToggleButtonStyled = styled.div`
     }
 
     &.toggle:not(:checked) + label {
-      background-color: ${theme.colors.violeto};
+      background-color: ${theme.colors.pinky};
     }
 
     &.toggle:not(:checked) + label:after {
@@ -107,7 +107,7 @@ const ToggleButtonStyled = styled.div`
 
     &.toggle:checked + label {
       text-align: left;
-      border-color: ${theme.colors.primary_bubble};
+      border-color: ${theme.colors.pinky};
       background-color: ${theme.colors.white}; /* Update to match theme */
     }
 
@@ -116,7 +116,7 @@ const ToggleButtonStyled = styled.div`
       left: 9px;
       right: auto;
       opacity: 1;
-      color: ${theme.colors.violeto};
+      color: ${theme.colors.pinky};
       letter-spacing: 0px;
     }
 

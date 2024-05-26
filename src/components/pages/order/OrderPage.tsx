@@ -1,15 +1,12 @@
 import styled from "styled-components";
 import Navbar from "./navbar/Navbar";
 import Main from "./main/Main";
-import { theme } from "../../../assets/theme";
 
 const OrderPage = () => {
   return (
-    <OrderPageStyled>
-      <div className="container">
-        <Navbar />
-        <Main />
-      </div>
+    <OrderPageStyled className="order-bg">
+      <Navbar />
+      <Main />
     </OrderPageStyled>
   )
 }
@@ -17,16 +14,11 @@ const OrderPage = () => {
 export default OrderPage
 
 const OrderPageStyled = styled.div`
-  background: ${theme.colors.primaryGradient}; // utilisation du gradient
   height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  .container {
-    height: 95vh;
-    width: 95vw;
-    display: flex;
-    flex-direction: column;
-  }
-  
+  flex-direction: column;
+  background: linear-gradient(100deg, #e0b5a9, #fad0c4);
 `;

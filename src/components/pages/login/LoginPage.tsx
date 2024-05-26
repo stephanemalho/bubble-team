@@ -9,7 +9,7 @@ const LoginPage = () => {
   //JSX
   return (
     <FragmentStyled>
-      <Logo size={5} rounded={8} />
+      <Logo size={4} rounded={6} />
       <LoginForm />
     </FragmentStyled>
   )
@@ -25,10 +25,34 @@ const FragmentStyled = styled.div`
   justify-content: center;
   align-items: center;
 
+
+  background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+  background-size: 600% 600%;
+
+  -webkit-animation: order-bg 18s ease infinite;
+  -moz-animation: order-bg 18s ease infinite;
+  animation: order-bg 18s ease infinite;
+
+  @-webkit-keyframes order-bg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  @-moz-keyframes order-bg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  @keyframes order-bg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
   ::before {
-    content: "";
+    /* content: "";
     background: url("/images/background-homepage.jpg");
-    background-size: cover;
+    background-size: cover; */
     
     position: absolute;
     top: 0;

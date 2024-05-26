@@ -45,7 +45,7 @@ const LoginFormstyled = styled.form`
     cursor: pointer;
     margin-top: 2rem;
     padding: 0.5rem 1rem;
-    background: ${theme.colors.primaryGradient};
+    background: ${theme.colors.purpleLight};
     border: 2px solid rgba(0, 0, 0,0.5);
     color: white;
     font-size: 1.5rem;
@@ -57,7 +57,7 @@ const LoginFormstyled = styled.form`
       border: 2px solid white;
     }
     &:active {
-      background:  ${theme.colors.primaryGradient};
+      background:  ${theme.colors.purpleLight};
       color: white;
       border: 2px solid white;
     }

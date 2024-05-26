@@ -18,6 +18,8 @@ const TitleText = {
   titleRight: 'Team',
   welcome: 'Bienvenue',
   hello: 'Bonjour',
+  toastActive: 'Mode admin activé',
+  toastInactive: 'Mode admin désactivé',
 }
 
 

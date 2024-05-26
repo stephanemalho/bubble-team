@@ -19,8 +19,8 @@ export default function Menu() {
       {menu.map((item) => (
         <CardMemo key={item.id} item={item}>
           <CardItem<Product>
-            item={{ ...item, leftDescription: formatPrice(item.price) }}
-            renderRightDescription={() => <PrimaryButton label="Ajouter" />}
+            item={{ ...item, topDescription: formatPrice(item.price) }}
+            renderBottomDescription={() => <PrimaryButton label="Ajouter" />}
           />
         </CardMemo>
       ))}
@@ -28,7 +28,7 @@ export default function Menu() {
   );
 }
 
-const MenuStyled = styled.div`
+const MenuStyled = styled.div`  
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-row-gap: 60px;

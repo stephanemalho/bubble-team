@@ -5,22 +5,21 @@ import { CardImage } from "./CardImage";
 
 export type CardItemProps<T extends Product> = {
   item: T;
-  renderRightDescription: (item: T) => React.ReactNode;
+  renderBottomDescription: (item: T) => React.ReactNode;
 };
 
-export default function CardItem<T extends Product>({ item, renderRightDescription }: CardItemProps<T>) {
-  const { title, imageSource, leftDescription } = item;
+export default function CardItem<T extends Product>({ item, renderBottomDescription }: CardItemProps<T>) {
+  const { title, imageSource, topDescription } = item;
   return (
     <CardItemStyled>
       {CardImage(imageSource, title)}
-      {CardDescription<T>(title, leftDescription, renderRightDescription, item)}
+      {CardDescription<T>(title, topDescription, renderBottomDescription, item)}
     </CardItemStyled>
   );
 }
 
 const CardItemStyled = styled.div`
   display: grid;
-  grid-template-rows: 2fr 1fr;
-  position: relative;
+  grid-template-rows: 1fr 1fr;
 `;
 

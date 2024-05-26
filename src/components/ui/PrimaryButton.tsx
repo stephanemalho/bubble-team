@@ -7,7 +7,7 @@ type PrimaryButtonProps = {
   className?: string
 }
 
-export default function PrimaryButton({ label, Icon, className } : PrimaryButtonProps) {
+export default function PrimaryButton({ label, Icon, className }: PrimaryButtonProps) {
   return (
     <PrimaryButtonStyled className={className}>
       <span>{label}</span>
@@ -27,21 +27,25 @@ const PrimaryButtonStyled = styled.button`
   text-decoration: none; //removes the text decoration in case you’re applying the .btn class to a link.
   line-height: 1;
   padding: 14px 24px;
-  border-radius: 5px;
+  border-radius: 0 0 ${theme.borderRadius.extraRound} ${theme.borderRadius.extraRound};
   font-size: 15px;
   font-weight: 800;
-  color: white;
-  background-color: ${theme.colors.violeto};
-  border: ${theme.colors.violeto};;
+  color: ${theme.colors.primary};
+  background-color: transparent;
+  border: ${theme.colors.pinky};;
+  border: 1px solid ${theme.colors.greyMedium};
+  border-top: 0;
 
   &:hover {
-    background-color: ${theme.colors.primary_bubble};
-    color: ${theme.colors.white};
+    background: rgba( 255, 255, 255, 0.5 );
+    box-shadow: 0 8px 32px 0 ${theme.colors.pinky};
+    backdrop-filter: blur( 14.5px );
+    -webkit-backdrop-filter: blur( 14.5px );
     transition: all 200ms ease-out;
   }
   &:active {
-    background-color: ${theme.colors.violeto};
-    color: ${theme.colors.white};
+    background-color: ${theme.colors.white};
+    color: ${theme.colors.primary};
   }
 
   &.is-disabled {
@@ -52,15 +56,13 @@ const PrimaryButtonStyled = styled.button`
 
   &.with-focus {
     border: 1px solid white;
-    background-color: ${theme.colors.white};
     color: ${theme.colors.primary};
     :hover {
       color: ${theme.colors.white};
       background-color: ${theme.colors.primary};
-      border: 1px solid ${theme.colors.violeto};;
+      border: 1px solid ${theme.colors.pinky};;
     }
     &:active {
-      background-color: ${theme.colors.white};
       color: ${theme.colors.primary};
     }
   }

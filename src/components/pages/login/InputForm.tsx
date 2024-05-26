@@ -32,7 +32,7 @@ const InputFormStyled = styled.div`
       width: 80%;
       margin: 0;
       border: none;
-      border-bottom: 2px solid #755377;
+      border-bottom: 2px solid #fbcbbc;
       outline: none;
       color: rgba(0, 0, 0,0.5);
       font-size: 1.5rem;

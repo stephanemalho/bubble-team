@@ -15,7 +15,7 @@ export default function Profile({ username }: ProfileProps) {
           Hey, <b>{username}</b>
         </p>
         <Link className="description" to="/">
-            <small>Se déconnecter</small>
+          <small>Se déconnecter</small>
         </Link>
       </div>
       <div className="picture">
@@ -65,6 +65,6 @@ const ProfileStyled = styled.div`
     display: flex;
     height: 100%;
     font-size: ${theme.fonts.size.P4};
-    color: ${theme.colors.violeto};
+    color: ${theme.colors.pinky};
   }
 `
