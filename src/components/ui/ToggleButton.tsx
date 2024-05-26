@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { theme } from "../../assets/theme"
 
 type ToggleButtonProps = {
-  isChecked?: boolean
+  isChecked: boolean
   onToggle: (prev: boolean | undefined) => void
   labelIfChecked?: string
   labelIfUnchecked?: string
