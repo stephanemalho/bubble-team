@@ -18,7 +18,7 @@ const colors = {
   lighterShade: '#8a6898',
   darkerShade: '#5e2f60',
   purpleLight: "#f5e3f7",
-  primaryGradient: `linear-gradient(45deg, #875F8B, #B493B8)`, 
+  primaryGradient: `linear-gradient(180deg,#B493B8, #875F8B)`, 
   violeto: "#875F8B",
 }
 
