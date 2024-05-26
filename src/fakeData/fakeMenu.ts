@@ -1,4 +1,4 @@
-export type MenuType = {
+export type Product = {
   id: number;
   imageSource: string;
   title: string;
@@ -9,7 +9,7 @@ export type MenuType = {
   leftDescription?: string;
 };
 
-export const fakeMenu1: MenuType[] = [
+export const fakeMenu1: Product[] = [
   {
     id: 1,
     imageSource: "/images/bubble-tea-masala.png",
@@ -30,7 +30,7 @@ export const fakeMenu1: MenuType[] = [
   },
 ];
 
-export const fakeMenu2: MenuType[] = [
+export const fakeMenu2: Product[] = [
   {
     id: 1,
     imageSource: "/images/bubble-tea-masala.png",

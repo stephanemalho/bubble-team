@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import { MenuType } from "../../../../fakeData/fakeMenu";
+import { Product } from "../../../../fakeData/fakeMenu";
 import { theme } from "../../../../assets/theme";
 
-export type CardItemProps<T extends MenuType> = {
+export type CardItemProps<T extends Product> = {
   item: T;
   renderRightDescription: (item: T) => React.ReactNode;
 };
 
-export default function CardItem<T extends MenuType>({ item, renderRightDescription }: CardItemProps<T>) {
+export default function CardItem<T extends Product>({ item, renderRightDescription }: CardItemProps<T>) {
   const { title, imageSource, leftDescription } = item;
   return (
     <CardItemStyled>

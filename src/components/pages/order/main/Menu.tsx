@@ -1,5 +1,5 @@
 import { memo, useState } from "react";
-import { fakeMenu2, MenuType } from "../../../../fakeData/fakeMenu";
+import { fakeMenu2, Product } from "../../../../fakeData/fakeMenu";
 import { formatPrice } from "../../../../utils/math";
 import styled from "styled-components";
 import Card from "../../../ui/Card";
@@ -8,7 +8,7 @@ import CardItem from "./CardItem";
 
 
 export default function Menu() {
-  const [menu, setMenu] = useState<MenuType[]>(fakeMenu2);
+  const [menu, setMenu] = useState<Product[]>(fakeMenu2);
 
   !menu && console.log("Menu rendered", setMenu);
 
@@ -18,7 +18,7 @@ export default function Menu() {
     <MenuStyled className="menu">
       {menu.map((item) => (
         <CardMemo key={item.id} item={item}>
-          <CardItem<MenuType>
+          <CardItem<Product>
             item={{ ...item, leftDescription: formatPrice(item.price) }}
             renderRightDescription={() => <PrimaryButton label="Ajouter" />}
           />
