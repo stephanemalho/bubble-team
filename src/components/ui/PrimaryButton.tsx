@@ -32,9 +32,10 @@ const PrimaryButtonStyled = styled.button`
   font-weight: 800;
   color: ${theme.colors.primary};
   background-color: transparent;
-  border: ${theme.colors.pinky};;
+  border: ${theme.colors.pinky};
   border: 1px solid ${theme.colors.greyMedium};
   border-top: 0;
+  cursor: pointer;
 
   &:hover {
     background: rgba( 255, 255, 255, 0.1 );
