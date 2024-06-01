@@ -6,8 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import Profile from "./Profile";
 import ToggleButton from "../../../ui/ToggleButton";
 import { runToast } from "./toast";
-import { ToastContainer } from "react-toastify";
 import { string } from "../../../constant";
+import ToastAdmin from "./ToastAdmin";
 
 export default function NavbarRightSide() {
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
@@ -28,7 +28,7 @@ export default function NavbarRightSide() {
         labelIfUnchecked={string.TitleText.toastInactive}
       />
       <Profile username={username} />
-      <ToastContainer />
+      <ToastAdmin />
     </NavbarRightSideStyled>
   )
 }

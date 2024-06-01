@@ -34,7 +34,14 @@ const LoginForm = () => {
 export default LoginForm
 
 const LoginFormstyled = styled.form`
-  background: rgba(0, 0, 0,0.5);
+  border-radius: ${theme.borderRadius.extraRound};
+  background: rgba( 255, 255, 255, 0.1 );
+  box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
+  position: relative;
+
+  backdrop-filter: blur( 5px );
+  -webkit-backdrop-filter: blur( 5px );
+  border: 1px solid rgba( 255, 255, 255 );
   text-align: center;
   max-width : 500px;
   width : 400px;
@@ -47,6 +54,7 @@ const LoginFormstyled = styled.form`
     padding: 0.5rem 1rem;
     background: ${theme.colors.purpleLight};
     border: 2px solid rgba(0, 0, 0,0.5);
+    border-radius: ${theme.borderRadius.extraRound};
     color: white;
     font-size: 1.5rem;
     cursor: pointer;

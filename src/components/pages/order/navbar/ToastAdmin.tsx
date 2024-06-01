@@ -3,16 +3,12 @@ import { theme } from "../../../../assets/theme";
 import styled from "styled-components";
 
 function ToastAdmin() {
-  return (
-    <ToastAdminStyled>
-      <ToastContainer />
-    </ToastAdminStyled>
-  )
+  return  <ToastAdminStyled />
 }
 
 export default ToastAdmin
 
-const ToastAdminStyled = styled.div`
+const ToastAdminStyled = styled(ToastContainer)`
 .toaster {
     max-width: 300px;
   }

@@ -32,19 +32,20 @@ const PrimaryButtonStyled = styled.button`
   font-weight: 800;
   color: ${theme.colors.primary};
   background-color: transparent;
-  border: ${theme.colors.pinky};;
+  border: ${theme.colors.pinky};
   border: 1px solid ${theme.colors.greyMedium};
   border-top: 0;
+  cursor: pointer;
 
   &:hover {
-    background: rgba( 255, 255, 255, 0.5 );
+    background: rgba( 255, 255, 255, 0.1 );
     box-shadow: 0 8px 32px 0 ${theme.colors.pinky};
     backdrop-filter: blur( 14.5px );
     -webkit-backdrop-filter: blur( 14.5px );
     transition: all 200ms ease-out;
   }
   &:active {
-    background-color: ${theme.colors.white};
+    box-shadow: 0 8px 32px 0 ${theme.colors.pinky} inset;
     color: ${theme.colors.primary};
   }
 
