@@ -15,7 +15,7 @@ const TitleText = {
   loginMain: 'Bienvenue chez vous!',
   loginSub: 'Connectez vous',
   titleLeft: 'Bubble',
-  titleRight: 'Team',
+  titleRight: 'Drinky',
   welcome: 'Bienvenue',
   hello: 'Bonjour',
   toastActive: 'Mode admin activé',

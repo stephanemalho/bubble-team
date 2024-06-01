@@ -37,14 +37,14 @@ const PrimaryButtonStyled = styled.button`
   border-top: 0;
 
   &:hover {
-    background: rgba( 255, 255, 255, 0.5 );
+    background: rgba( 255, 255, 255, 0.1 );
     box-shadow: 0 8px 32px 0 ${theme.colors.pinky};
     backdrop-filter: blur( 14.5px );
     -webkit-backdrop-filter: blur( 14.5px );
     transition: all 200ms ease-out;
   }
   &:active {
-    background-color: ${theme.colors.white};
+    box-shadow: 0 8px 32px 0 ${theme.colors.pinky} inset;
     color: ${theme.colors.primary};
   }
 
