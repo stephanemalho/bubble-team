@@ -1,32 +1,32 @@
-import { FormEvent , useState } from "react"
+import { FormEvent, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
 import styled from "styled-components";
 import InputForm from "./InputForm";
 import TitleForm from "./TitleForm";
-import { string } from "../../constant";
 import { theme } from "../../../assets/theme";
+import { LOGIN_PAGE } from "../../constant/loginPage";
 
 const LoginForm = () => {
-  //State
   const [userName, setUserName] = useState("");
   const navigate = useNavigate();
 
-  //Behavior
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     const target = e.target as HTMLFormElement;
-    const userName = target.elements.namedItem("username") as HTMLInputElement;
-    navigate(`order/${userName.value}`);
+    const userNameInput = target.elements.namedItem("username") as HTMLInputElement;
+    const userName = userNameInput.value;
+    navigate(`order/${userName}`);
+
     setUserName("");
   }
 
-  //JSX
   return (
     <LoginFormstyled onSubmit={(e) => handleSubmit(e)}>
       <TitleForm />
-      <InputForm icon={<BsPersonCircle className="icon" />} onChange={(e) => setUserName(e.target.value)} value={userName} placeholder={string.Input.placeholder} title={string.Input.placeholder} name="username"/>
-      <button type="submit" title={string.Button.loginText}>{string.Button.loginText}</button>
+      <InputForm icon={<BsPersonCircle className="icon" />} onChange={(e) => setUserName(e.target.value)} value={userName} placeholder={LOGIN_PAGE.placeholder} title={LOGIN_PAGE.placeholder} name="username" />
+      <button type="submit">{LOGIN_PAGE.loginText}</button>
     </LoginFormstyled>
   )
 }

@@ -4,9 +4,7 @@ import styled from 'styled-components';
 import Logo from "../../ui/Title";
 
 const LoginPage = () => {
-  //State
 
-  //JSX
   return (
     <FragmentStyled>
       <Logo size={4} rounded={6} />

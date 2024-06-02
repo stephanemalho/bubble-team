@@ -1,6 +1,6 @@
 
 // test : le plus générique 
-// proche enj proche on va vers le plus spécifique
+// proche en proche on va vers le plus spécifique
 // edge-cases : 1. on a un composant qui divise
 // function divide (num, den) {
 //   return num / den;
