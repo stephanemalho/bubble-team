@@ -46,17 +46,4 @@ const FragmentStyled = styled.div`
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
   }
-
-  ::before {
-    /* content: "";
-    background: url("/images/background-homepage.jpg");
-    background-size: cover; */
-    
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index:-1;
-  }
 `;
