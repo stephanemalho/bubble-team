@@ -6,7 +6,6 @@ import Card from "../../../ui/Card";
 import PrimaryButton from "../../../ui/PrimaryButton";
 import CardItem from "./CardItem/CardItem";
 
-
 export default function Menu() {
   const [menu, setMenu] = useState<Product[]>(fakeMenu2);
 
