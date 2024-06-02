@@ -1,17 +1,17 @@
-const Button = {
+export const BUTTON_LABELS = {
   loginText: "Accéder à mon espace",
   returnLogin: "Déconnexion",
 }
-const Images = {
+export const Images = {
   alt: 'logoTitle',
   logo: '/images/bubble-title.png',
 }
 
-const Input = {
+export const Input = {
   placeholder: "Entrez votre prénom",
 }
 
-const TitleText = {
+export const TitleText = {
   loginMain: 'Bienvenue chez vous!',
   loginSub: 'Connectez vous',
   titleLeft: 'Bubble',
@@ -23,9 +23,9 @@ const TitleText = {
 }
 
 
-
+// @TODO: Replave stirng below 
 export const string = {
-  Button,
+  BUTTON_LABELS,
   Images,
   Input,
   TitleText,
