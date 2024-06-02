@@ -1,6 +1,5 @@
 export const LOGO_PATH = "/images/bubble-title.png";
 
-//@TODO : Attach variables by its page
 export const LOGIN_PAGE = {
   alt: "logo-title",
   hello: "Bonjour",
