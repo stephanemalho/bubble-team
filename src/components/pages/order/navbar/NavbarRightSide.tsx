@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useParams } from "react-router-dom"
 import styled from "styled-components";
@@ -9,12 +8,16 @@ import { runToast } from "./toast";
 import { string } from "../../../constant";
 import ToastAdmin from "./ToastAdmin";
 
-export default function NavbarRightSide() {
-  const [isAdmin, setIsAdmin] = useState<boolean>(false);
-  const { username } = useParams();
-  const showToast = runToast;
+type ParamsType = {
+  username: string; // éviter les fuites de rigueur
+}
 
-  const isAdminMode = (prev: boolean | undefined): void => {
+export default function NavbarRightSide() {
+  const [isAdmin, setIsAdmin] = useState(false);
+  const { username } = useParams<ParamsType>();
+  const showToast = runToast;
+  
+  const toggleAdminMode = (prev: boolean | undefined) => {
     setIsAdmin(!prev);
     !isAdmin && showToast();
   };
@@ -23,7 +26,7 @@ export default function NavbarRightSide() {
     <NavbarRightSideStyled>
       <ToggleButton
         isChecked={isAdmin}
-        onToggle={isAdminMode}
+        onToggle={toggleAdminMode}
         labelIfChecked={string.TitleText.toastActive}
         labelIfUnchecked={string.TitleText.toastInactive}
       />

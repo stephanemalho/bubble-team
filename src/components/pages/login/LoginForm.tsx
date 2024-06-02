@@ -8,25 +8,24 @@ import { string } from "../../constant";
 import { theme } from "../../../assets/theme";
 
 const LoginForm = () => {
-  //State
   const [userName, setUserName] = useState("");
   const navigate = useNavigate();
 
-  //Behavior
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     const target = e.target as HTMLFormElement;
     const userName = target.elements.namedItem("username") as HTMLInputElement;
-    navigate(`order/${userName.value}`);
+    navigate(`order/${userName}`) ;
+    
     setUserName("");
   }
 
-  //JSX
   return (
     <LoginFormstyled onSubmit={(e) => handleSubmit(e)}>
       <TitleForm />
       <InputForm icon={<BsPersonCircle className="icon" />} onChange={(e) => setUserName(e.target.value)} value={userName} placeholder={string.Input.placeholder} title={string.Input.placeholder} name="username"/>
-      <button type="submit" title={string.Button.loginText}>{string.Button.loginText}</button>
+      <button type="submit">{string.BUTTON_LABELS.loginText}</button>
     </LoginFormstyled>
   )
 }
