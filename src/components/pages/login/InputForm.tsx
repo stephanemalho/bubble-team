@@ -6,7 +6,6 @@ interface InputFormProps extends InputProps {
   icon?: ReactNode;
   title?: string;
   name?: string;
-
 }
 
 const InputForm = ({ value, onChange, icon, placeholder, title, name }: InputFormProps) => {
