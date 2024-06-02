@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Profile from "./Profile";
 import ToggleButton from "../../../ui/ToggleButton";
 import { runToast } from "./toast";
-import { string } from "../../../constant";
+import { TOAST_ADMIN } from "../../../constant/loginPage";
 import ToastAdmin from "./ToastAdmin";
 
 type ParamsType = {
@@ -16,7 +16,7 @@ export default function NavbarRightSide() {
   const [isAdmin, setIsAdmin] = useState(false);
   const { username } = useParams<ParamsType>();
   const showToast = runToast;
-  
+
   const toggleAdminMode = (prev: boolean | undefined) => {
     setIsAdmin(!prev);
     !isAdmin && showToast();
@@ -27,8 +27,8 @@ export default function NavbarRightSide() {
       <ToggleButton
         isChecked={isAdmin}
         onToggle={toggleAdminMode}
-        labelIfChecked={string.TitleText.toastActive}
-        labelIfUnchecked={string.TitleText.toastInactive}
+        labelIfChecked={TOAST_ADMIN.toastActive}
+        labelIfUnchecked={TOAST_ADMIN.toastInactive}
       />
       <Profile username={username} />
       <ToastAdmin />

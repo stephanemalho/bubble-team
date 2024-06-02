@@ -1,5 +1,6 @@
 import { FaCircleInfo } from 'react-icons/fa6';
 import { Slide, ToastPosition, toast } from 'react-toastify';
+import { TOAST_ADMIN } from '../../../constant/loginPage';
 
 export const toastProperties = {
   icon: FaCircleInfo,
@@ -13,6 +14,6 @@ export const toastProperties = {
   transition: Slide,
 };
 
-export const toastMessage = 'Admin activé !';
+export const toastMessage = TOAST_ADMIN.bannerActive;
 
 export const runToast = () => toast(toastMessage, toastProperties);

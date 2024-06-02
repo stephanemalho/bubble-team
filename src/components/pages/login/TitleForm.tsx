@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import { string } from "../../constant";
 import { theme } from "../../../assets/theme";
+import { LOGIN_PAGE } from "../../constant/loginPage";
 
 
 const TitleForm = () => {
   return (
     <TitleFormStyled>
-      <h1 title={string.TitleText.loginMain}>{string.TitleText.loginMain}</h1>
+      <h1 title={LOGIN_PAGE.loginMain}>{LOGIN_PAGE.loginMain}</h1>
       <hr />
-      <h2 title={string.TitleText.loginSub}>{string.TitleText.loginSub}</h2>
+      <h2 title={LOGIN_PAGE.loginSub}>{LOGIN_PAGE.loginSub}</h2>
     </TitleFormStyled>
   )
 }

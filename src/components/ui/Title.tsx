@@ -1,21 +1,21 @@
 import styled from 'styled-components';
 import { theme } from '../../assets/theme';
-import { string } from '../constant';
+import { LOGIN_PAGE, LOGO_PATH } from '../constant/loginPage';
 
 type TitleProps = {
   size: number;
   rounded: number;
 }
 
-const Title = ({size, rounded}:TitleProps) => {
+const Title = ({ size, rounded }: TitleProps) => {
   return (
     <TitleStyled
       size={size}
       rounded={rounded}
     >
-    <h1>{string.TitleText.titleLeft}</h1>
-    <img src={string.Images.logo} alt={string.Images.alt} />
-    <h1>{string.TitleText.titleRight}</h1>
+      <h1>{LOGIN_PAGE.titleLeft}</h1>
+      <img src={LOGO_PATH} alt={LOGIN_PAGE.alt} />
+      <h1>{LOGIN_PAGE.titleRight}</h1>
     </TitleStyled>
   )
 }
