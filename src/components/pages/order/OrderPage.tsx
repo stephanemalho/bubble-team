@@ -14,6 +14,7 @@ const OrderPage = () => {
 export default OrderPage
 
 const OrderPageStyled = styled.div`
+  position: fixed;
   height: 100vh;
   width: 100vw;
   display: flex;
