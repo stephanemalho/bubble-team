@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { theme } from "../../assets/theme"
 
 type PrimaryButtonProps = {
-  label: string
+  label?: string
   Icon?: JSX.Element
   className?: string
 }
@@ -17,24 +17,14 @@ export default function PrimaryButton({ label, Icon, className }: PrimaryButtonP
 }
 
 const PrimaryButtonStyled = styled.button`
-  width: 100%;
-  height: auto;
-  border: 1px solid red;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  white-space: nowrap; //prevents the text label from wrapping to the next line.
-  text-decoration: none; //removes the text decoration in case you’re applying the .btn class to a link.
-  line-height: 1;
-  padding: 14px 24px;
-  border-radius: 0 0 ${theme.borderRadius.extraRound} ${theme.borderRadius.extraRound};
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   font-size: 15px;
   font-weight: 800;
   color: ${theme.colors.primary};
   background-color: transparent;
-  border: ${theme.colors.pinky};
-  border: 1px solid ${theme.colors.greyMedium};
-  border-top: 0;
+  border: 1px solid ${theme.colors.pinky};
   cursor: pointer;
 
   &:hover {
@@ -56,7 +46,7 @@ const PrimaryButtonStyled = styled.button`
   }
 
   &.with-focus {
-    border: 1px solid white;
+    
     color: ${theme.colors.primary};
     :hover {
       color: ${theme.colors.white};

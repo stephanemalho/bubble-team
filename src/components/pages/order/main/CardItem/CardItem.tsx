@@ -20,6 +20,6 @@ export default function CardItem<T extends Product>({ item, renderBottomDescript
 
 const CardItemStyled = styled.div`
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 60% 1fr;
 `;
 
