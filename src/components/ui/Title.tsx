@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { theme } from '../../assets/theme';
-import { LOGIN_PAGE, LOGO_PATH } from '../constant/loginPage';
+import { LOGIN_PAGE, LOGO_PATH } from '../../constant/loginPage';
 
 type TitleProps = {
   size: number;

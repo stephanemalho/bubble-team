@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Profile from "./Profile";
 import ToggleButton from "../../../ui/ToggleButton";
 import { runToast } from "./toast";
-import { TOAST_ADMIN } from "../../../constant/loginPage";
+import { TOAST_ADMIN } from "../../../../constant/loginPage";
 import ToastAdmin from "./ToastAdmin";
 
 type ParamsType = {

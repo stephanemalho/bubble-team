@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../../assets/theme";
-import { LOGIN_PAGE } from "../../constant/loginPage";
+import { LOGIN_PAGE } from "../../../constant/loginPage";
 
 const TitleForm = () => {
   return (

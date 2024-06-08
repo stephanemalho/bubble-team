@@ -2,7 +2,7 @@ import { BsPersonCircle } from "react-icons/bs"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
 import { theme } from "../../../../assets/theme"
-import { LOGIN_PAGE, PROFILE_INFO } from "../../../constant/loginPage"
+import { LOGIN_PAGE, PROFILE_INFO } from "../../../../constant/loginPage"
 
 type ProfileProps = {
   username: string | undefined

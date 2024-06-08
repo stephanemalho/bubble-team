@@ -1,6 +1,6 @@
 import { FaCircleInfo } from 'react-icons/fa6';
 import { Slide, ToastPosition, toast } from 'react-toastify';
-import { TOAST_ADMIN } from '../../../constant/loginPage';
+import { TOAST_ADMIN } from '../../../../constant/loginPage';
 
 export const toastProperties = {
   icon: FaCircleInfo,

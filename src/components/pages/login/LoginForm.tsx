@@ -4,8 +4,8 @@ import { BsPersonCircle } from "react-icons/bs";
 import styled from "styled-components";
 import TitleForm from "./TitleForm";
 import { theme } from "../../../assets/theme";
-import { LOGIN_PAGE } from "../../constant/loginPage";
 import Input from "../../ui/Input";
+import { LOGIN_PAGE } from "../../../constant/loginPage";
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
