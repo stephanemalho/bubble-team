@@ -1,14 +1,10 @@
-import { memo, useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-import { TbShoppingBag } from "react-icons/tb";
 import { FaCaretRight, FaCaretLeft } from "react-icons/fa";
 
 import { fakeTea, noMenu, Product } from "../../../../../fakeData/fakeMenu";
-import Card from "../../../../ui/Card";
-import CardItem from "./CardItem/CardItem";
-import { formatPrice } from "../../../../../utils/math";
-import PrimaryButton from "../../../../ui/PrimaryButton";
 import { theme } from "../../../../../assets/theme";
+import MenuCard from "./Menu/MenuCard";
 
 type MenuListProps = {
   onCardHover: (item: Product) => void;
@@ -21,8 +17,6 @@ export default function MenuList({ onCardHover }: MenuListProps) {
   const [cardWidth, setCardWidth] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  //const totalCards = menu.length * 3; // Original cards + clones
-
   !menu && console.log("MenuList rendered", setMenu);
 
   useEffect(() => {
@@ -34,7 +28,7 @@ export default function MenuList({ onCardHover }: MenuListProps) {
     }
   }, []);
 
-  const CardMemo = memo(Card);
+  
 
   const handlePrev = () => {
     if (isTransitioning) return;
@@ -48,76 +42,22 @@ export default function MenuList({ onCardHover }: MenuListProps) {
     setCurrentIndex((prev) => prev + 1);
   };
 
-  const handleTransitionEnd = () => {
-    setIsTransitioning(false);
-    if (currentIndex === menu.length * 2) {
-      setCurrentIndex(menu.length);
-    } else if (currentIndex === menu.length - 1) {
-      setCurrentIndex(menu.length * 2 - 1);
-    }
-  };
-
   return (
     <MenuContainer>
       <Button onClick={handlePrev}><div className="rounded">
         <FaCaretLeft className="left"/>
       </div></Button>
       <CarouselContainer ref={containerRef}>
-        <MenuListStyled
+        <MenuCard
+          menu={menu}
           currentIndex={currentIndex}
-          cardWidth={cardWidth}
-          onTransitionEnd={handleTransitionEnd}
+          setCurrentIndex={setCurrentIndex}
           isTransitioning={isTransitioning}
-        >
-          {menu.map((item, index) => (
-            <CardWrapper
-              key={`clone-start-${index}`}
-              index={index}
-              className="card-wrapper"
-              onMouseEnter={() => onCardHover(item)}
-              onMouseLeave={() => onCardHover(noMenu[0])}
-            >
-              <CardMemo item={item}>
-                <CardItem<Product>
-                  item={{ ...item, topDescription: formatPrice(item.price) }}
-                  renderBottomDescription={() => <PrimaryButton Icon={<TbShoppingBag size={20} />} />}
-                />
-              </CardMemo>
-            </CardWrapper>
-          ))}
-          {menu.map((item, index) => (
-            <CardWrapper
-              key={`original-${index}`}
-              index={index + menu.length}
-              className="card-wrapper"
-              onMouseEnter={() => onCardHover(item)}
-              onMouseLeave={() => onCardHover(noMenu[0])}
-            >
-              <CardMemo item={item}>
-                <CardItem<Product>
-                  item={{ ...item, topDescription: formatPrice(item.price) }}
-                  renderBottomDescription={() => <PrimaryButton Icon={<TbShoppingBag size={20} />} />}
-                />
-              </CardMemo>
-            </CardWrapper>
-          ))}
-          {menu.map((item, index) => (
-            <CardWrapper
-              key={`clone-end-${index}`}
-              index={index + menu.length * 2}
-              className="card-wrapper"
-              onMouseEnter={() => onCardHover(item)}
-              onMouseLeave={() => onCardHover(noMenu[0])}
-            >
-              <CardMemo item={item}>
-                <CardItem<Product>
-                  item={{ ...item, topDescription: formatPrice(item.price) }}
-                  renderBottomDescription={() => <PrimaryButton Icon={<TbShoppingBag size={20} />} />}
-                />
-              </CardMemo>
-            </CardWrapper>
-          ))}
-        </MenuListStyled>
+          setIsTransitioning={setIsTransitioning}
+          cardWidth={cardWidth}
+          onCardHover={onCardHover}
+          noMenu={noMenu} 
+        />
       </CarouselContainer>
       <Button onClick={handleNext}><div className="rounded">
         <FaCaretRight className="right"/>
@@ -138,26 +78,6 @@ const CarouselContainer = styled.div`
   overflow: hidden;
   border-right: 1px solid #0000000d;
   border-left: 1px solid #0000000d;
-`;
-
-const MenuListStyled = styled.div<{ currentIndex: number, cardWidth: number, isTransitioning: boolean }>`
-  display: flex;
-  transition: ${({ isTransitioning }) => (isTransitioning ? 'transform 0.5s ease' : 'none')};
-  transform: ${({ currentIndex, cardWidth }) => `translateX(-${currentIndex * cardWidth}px)`};
-`;
-
-const CardWrapper = styled.div<{ index: number }>`
-  display: inline-block;
-  position: relative;
-  margin: 0 5px; /* Ajustez la marge selon vos besoins */
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transition: transform 0.6s ease;
-    opacity: 1;
-    background-color: #ffffffe4;
-    border-radius: 12px;
-  }
 `;
 
 const Button = styled.button`
