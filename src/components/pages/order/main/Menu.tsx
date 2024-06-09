@@ -1,14 +1,14 @@
 import { memo, useState } from "react";
 import styled from "styled-components";
 import { TbShoppingBag } from "react-icons/tb";
-import { fakeMenu2, Product } from "../../../../fakeData/fakeMenu";
+import { fakeMenu2, noMenu, Product } from "../../../../fakeData/fakeMenu";
 import { formatPrice } from "../../../../utils/math";
 import Card from "../../../ui/Card";
 import PrimaryButton from "../../../ui/PrimaryButton";
 import CardItem from "./CardItem/CardItem";
 
 type MenuProps = {
-  onCardHover: (item: Product | null) => void;
+  onCardHover: (item: Product ) => void;
 };
 
 export default function Menu({ onCardHover }: MenuProps) {
@@ -26,7 +26,7 @@ export default function Menu({ onCardHover }: MenuProps) {
           index={index}
           isFirst={index === 0}
           onMouseEnter={() => onCardHover(item)}
-          onMouseLeave={() => onCardHover(null)}
+          onMouseLeave={() => onCardHover(noMenu[0])}
         >
           <CardMemo item={item}>
             <CardItem<Product>
@@ -43,7 +43,6 @@ export default function Menu({ onCardHover }: MenuProps) {
 const MenuStyled = styled.div`
   position: relative;
   width: 100%;
-  height: 100vh; /* Ajustez la hauteur selon vos besoins */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -69,7 +68,7 @@ const CardWrapper = styled.div<{ index: number, isFirst: boolean }>`
     transform: ${({ index }) => (index === 0 ? 'none' : 'translateX(-70px)')};
     transition: transform 0.6s ease;
     opacity: 1;
-    background-color: #fff;
+    background-color: #ffffffe4;
     border-radius: 12px;
   }
 `;
