@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { theme } from "../../../../../../assets/theme";
 import { ToppingProps } from "./toppingConfig";
 
-function Topping({ Icon, name }: ToppingProps) {
+function Topping({ Icon, name, onClick }: ToppingProps) {
   return (
-    <ToppingStyled><div className="rounded">
+    <ToppingStyled><div className="rounded" onClick={onClick}>
       <Icon />
     </div><span>{name}</span></ToppingStyled>
   )

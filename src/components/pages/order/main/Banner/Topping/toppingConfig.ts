@@ -6,6 +6,7 @@ export type ToppingProps = {
   id: number;
   Icon: IconType;
   name: string;
+  onClick?: () => void;
 };
 
 export const toppings:ToppingProps[] = [
