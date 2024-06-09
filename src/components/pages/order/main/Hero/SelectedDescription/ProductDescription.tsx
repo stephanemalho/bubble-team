@@ -74,19 +74,19 @@ const ProductDescriptionStyled = styled.div`
             font-size: 1rem;
             color: #00000071;
             margin: 0;
-            width: 90%;
+            
           }
           span {
             font-size: 0.7rem;
             color: ${theme.colors.green};
             margin: 0;
-            width: 90%;
+            
             margin-top: auto;
           }
           div {
             display: flex;
             justify-content: space-between;
-            width: 90%;
+            
             font-size: 1.2rem;
             margin-top: auto;
             small {

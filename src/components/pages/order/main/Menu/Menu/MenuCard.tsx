@@ -1,11 +1,13 @@
 import { memo } from "react";
-import styled from "styled-components";
 import { TbShoppingBag } from "react-icons/tb";
+import styled from "styled-components";
+
+import { Product } from "../../../../../../fakeData/fakeMenu";
+
+import Card from "../../../../../ui/Card";
 import CardItem from "../CardItem/CardItem";
 import { formatPrice } from "../../../../../../utils/math";
 import PrimaryButton from "../../../../../ui/PrimaryButton";
-import { Product } from "../../../../../../fakeData/fakeMenu";
-import Card from "../../../../../ui/Card";
 
 type MenuCardProps = {
   menu: Product[];
@@ -18,11 +20,20 @@ type MenuCardProps = {
   noMenu: Product[];
 };
 
-function MenuCard({ menu, currentIndex, setCurrentIndex, isTransitioning, setIsTransitioning, cardWidth, onCardHover, noMenu}:MenuCardProps) {
+function MenuCard({
+  menu,
+  currentIndex,
+  setCurrentIndex,
+  isTransitioning,
+  setIsTransitioning,
+  cardWidth,
+  onCardHover,
+  noMenu
+}: MenuCardProps) {
+  
+  const CardMemo = memo(Card);
 
- const CardMemo = memo(Card);
-
- const handleTransitionEnd = () => {
+  const handleTransitionEnd = () => {
     setIsTransitioning(false);
     if (currentIndex === menu.length * 2) {
       setCurrentIndex(menu.length);
@@ -31,67 +42,40 @@ function MenuCard({ menu, currentIndex, setCurrentIndex, isTransitioning, setIsT
     }
   };
 
+  const renderCards = (items: Product[], startIndex: number) => {
+    return items.map((item, index) => (
+      <CardWrapper
+        key={`card-${startIndex + index}`}
+        index={startIndex + index}
+        className="card-wrapper"
+        onMouseEnter={() => onCardHover(item)}
+        onMouseLeave={() => onCardHover(noMenu[0])}
+      >
+        <CardMemo item={item}>
+          <CardItem<Product>
+            item={{ ...item, topDescription: formatPrice(item.price) }}
+            renderBottomDescription={() => <PrimaryButton Icon={<TbShoppingBag size={20} />} />}
+          />
+        </CardMemo>
+      </CardWrapper>
+    ));
+  };
 
   return (
     <MenuListStyled
-    currentIndex={currentIndex}
-    cardWidth={cardWidth}
-    onTransitionEnd={handleTransitionEnd}
-    isTransitioning={isTransitioning}
-  >
-    {menu.map((item, index) => (
-      <CardWrapper
-        key={`clone-start-${index}`}
-        index={index}
-        className="card-wrapper"
-        onMouseEnter={() => onCardHover(item)}
-        onMouseLeave={() => onCardHover(noMenu[0])}
-      >
-        <CardMemo item={item}>
-          <CardItem<Product>
-            item={{ ...item, topDescription: formatPrice(item.price) }}
-            renderBottomDescription={() => <PrimaryButton Icon={<TbShoppingBag size={20} />} />}
-          />
-        </CardMemo>
-      </CardWrapper>
-    ))}
-    {menu.map((item, index) => (
-      <CardWrapper
-        key={`original-${index}`}
-        index={index + menu.length}
-        className="card-wrapper"
-        onMouseEnter={() => onCardHover(item)}
-        onMouseLeave={() => onCardHover(noMenu[0])}
-      >
-        <CardMemo item={item}>
-          <CardItem<Product>
-            item={{ ...item, topDescription: formatPrice(item.price) }}
-            renderBottomDescription={() => <PrimaryButton Icon={<TbShoppingBag size={20} />} />}
-          />
-        </CardMemo>
-      </CardWrapper>
-    ))}
-    {menu.map((item, index) => (
-      <CardWrapper
-        key={`clone-end-${index}`}
-        index={index + menu.length * 2}
-        className="card-wrapper"
-        onMouseEnter={() => onCardHover(item)}
-        onMouseLeave={() => onCardHover(noMenu[0])}
-      >
-        <CardMemo item={item}>
-          <CardItem<Product>
-            item={{ ...item, topDescription: formatPrice(item.price) }}
-            renderBottomDescription={() => <PrimaryButton Icon={<TbShoppingBag size={20} />} />}
-          />
-        </CardMemo>
-      </CardWrapper>
-    ))}
-  </MenuListStyled>
-  )
+      currentIndex={currentIndex}
+      cardWidth={cardWidth}
+      onTransitionEnd={handleTransitionEnd}
+      isTransitioning={isTransitioning}
+    >
+      {renderCards(menu, 0)}
+      {renderCards(menu, menu.length)}
+      {renderCards(menu, menu.length * 2)}
+    </MenuListStyled>
+  );
 }
 
-export default MenuCard
+export default MenuCard;
 
 const MenuListStyled = styled.div<{ currentIndex: number, cardWidth: number, isTransitioning: boolean }>`
   display: flex;
