@@ -182,6 +182,9 @@ const Button = styled.button`
   &:hover {
     background-color: ${theme.colors.lightPinky};
   }
+  &:active {
+    background-color: ${theme.colors.pinky};
+  }
 
   .rounded {
     display: flex;
