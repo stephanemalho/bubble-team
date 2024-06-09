@@ -30,7 +30,6 @@ function MenuCard({
   onCardHover,
   noMenu
 }: MenuCardProps) {
-  
   const CardMemo = memo(Card);
 
   const handleTransitionEnd = () => {
@@ -46,7 +45,7 @@ function MenuCard({
     return items.map((item, index) => (
       <CardWrapper
         key={`card-${startIndex + index}`}
-        index={startIndex + index}
+        $index={startIndex + index}
         className="card-wrapper"
         onMouseEnter={() => onCardHover(item)}
         onMouseLeave={() => onCardHover(noMenu[0])}
@@ -63,10 +62,10 @@ function MenuCard({
 
   return (
     <MenuListStyled
-      currentIndex={currentIndex}
-      cardWidth={cardWidth}
+      $currentIndex={currentIndex}
+      $cardWidth={cardWidth}
       onTransitionEnd={handleTransitionEnd}
-      isTransitioning={isTransitioning}
+      $isTransitioning={isTransitioning}
     >
       {renderCards(menu, 0)}
       {renderCards(menu, menu.length)}
@@ -77,13 +76,13 @@ function MenuCard({
 
 export default MenuCard;
 
-const MenuListStyled = styled.div<{ currentIndex: number, cardWidth: number, isTransitioning: boolean }>`
+const MenuListStyled = styled.div<{ $currentIndex: number, $cardWidth: number, $isTransitioning: boolean }>`
   display: flex;
-  transition: ${({ isTransitioning }) => (isTransitioning ? 'transform 0.5s ease' : 'none')};
-  transform: ${({ currentIndex, cardWidth }) => `translateX(-${currentIndex * cardWidth}px)`};
+  transition: ${({ $isTransitioning }) => ($isTransitioning ? 'transform 0.5s ease' : 'none')};
+  transform: ${({ $currentIndex, $cardWidth }) => `translateX(-${$currentIndex * $cardWidth}px)`};
 `;
 
-const CardWrapper = styled.div<{ index: number }>`
+const CardWrapper = styled.div<{ $index: number }>`
   display: inline-block;
   position: relative;
   margin: 0 5px; /* Ajustez la marge selon vos besoins */

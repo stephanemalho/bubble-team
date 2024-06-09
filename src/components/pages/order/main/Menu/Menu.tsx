@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { FaCaretRight, FaCaretLeft } from "react-icons/fa";
 
 import { fakeTea, noMenu, Product } from "../../../../../fakeData/fakeMenu";
-
 import { theme } from "../../../../../assets/theme";
 import MenuCard from "./Menu/MenuCard";
 
@@ -135,4 +134,3 @@ const Button = styled.button`
     }
   }
 `;
-

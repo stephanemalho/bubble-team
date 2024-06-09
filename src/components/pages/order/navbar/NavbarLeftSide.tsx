@@ -5,7 +5,7 @@ import { refreshWindow } from '../../../../utils/window';
 export default function NavbarLeftSide() {
   return (
     <NavbarLeftSideStyled onClick={refreshWindow}>
-      <Title size={2} rounded={3} />
+      <Title size={2} $rounded={3} />
     </NavbarLeftSideStyled>
   )
 }

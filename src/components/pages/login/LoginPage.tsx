@@ -7,7 +7,7 @@ const LoginPage = () => {
 
   return (
     <FragmentStyled>
-      <Logo size={4} rounded={6} />
+      <Logo size={4} $rounded={6} />
       <LoginForm />
     </FragmentStyled>
   )

@@ -4,14 +4,14 @@ import { LOGIN_PAGE, LOGO_PATH } from '../../constant/loginPage';
 
 type TitleProps = {
   size: number;
-  rounded: number;
+  $rounded: number; // Utilisez le préfixe $ pour les props transitoires
 }
 
-const Title = ({ size, rounded }: TitleProps) => {
+const Title = ({ size, $rounded }: TitleProps) => {
   return (
     <TitleStyled
       size={size}
-      rounded={rounded}
+      $rounded={$rounded} // Utilisez le préfixe $ ici aussi
     >
       <h1>{LOGIN_PAGE.titleLeft}</h1>
       <img src={LOGO_PATH} alt={LOGIN_PAGE.alt} />
@@ -41,11 +41,9 @@ const TitleStyled = styled.div<TitleProps>`
     background: ${theme.colors.primary_bubble};
     object-fit: contain;
     object-position: center;
-    height: ${(props) => props.rounded}rem;
-    width: ${(props) => props.rounded}rem;
+    height: ${(props) => props.$rounded}rem; // Utilisez le préfixe $ ici aussi
+    width: ${(props) => props.$rounded}rem; // Utilisez le préfixe $ ici aussi
     border-radius: ${theme.borderRadius.circle};
     border: ${theme.border.white};
   }
 `;
-
-
