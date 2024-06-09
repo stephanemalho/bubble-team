@@ -1,40 +1,41 @@
 import { GiHeatHaze } from "react-icons/gi";
 import { IoIosSnow } from "react-icons/io";
-import { Product } from "../../../../../../fakeData/fakeMenu";
-import { formatIngredients, formatPrice } from "../../../../../../utils/math";
 import styled from "styled-components";
+
+import { Product } from "../../../../../../fakeData/fakeMenu";
+
+import { formatIngredients, formatPrice } from "../../../../../../utils/math";
 import { theme } from "../../../../../../assets/theme";
 
 type ProductDescriptionProps = {
   selectedCard: Product;
 };
 
-function ProductDescription({ selectedCard }:ProductDescriptionProps) {
+function ProductDescription({ selectedCard }: ProductDescriptionProps) {
   return (
     <ProductDescriptionStyled>
-          {selectedCard && (
-            <div className="hovered">
-              <div className="imageHovered"><img src={selectedCard.imageSource} alt={selectedCard.title} /></div>
-              <div className="hoveredDescription">
-                <h1>{selectedCard.title}</h1>
-                <p>{selectedCard.description}</p>
-                <span>Composition : {formatIngredients(selectedCard.ingredients)}</span>
-                <div>
-                  <small>{formatPrice(selectedCard.price)}</small>
-                  <small className="symbol">{selectedCard.isHot ? <GiHeatHaze className="hot" /> : <IoIosSnow className="snow" />}</small>
-                </div>
-              </div>
+      {selectedCard && (
+        <div className="hovered">
+          <div className="imageHovered"><img src={selectedCard.imageSource} alt={selectedCard.title} /></div>
+          <div className="hoveredDescription">
+            <h1>{selectedCard.title}</h1>
+            <p>{selectedCard.description}</p>
+            <span>Composition : {formatIngredients(selectedCard.ingredients)}</span>
+            <div>
+              <small>{formatPrice(selectedCard.price)}</small>
+              <small className="symbol">{selectedCard.isHot ? <GiHeatHaze className="hot" /> : <IoIosSnow className="snow" />}</small>
             </div>
-          )
-          }
-        </ProductDescriptionStyled>
+          </div>
+        </div>
+      )
+      }
+    </ProductDescriptionStyled>
   )
 }
 
 export default ProductDescription
 
 const ProductDescriptionStyled = styled.div`
-.CardSelected {
       height: 100%;
       padding-left: 20px;
       background-color: transparent;
@@ -105,5 +106,4 @@ const ProductDescriptionStyled = styled.div`
           }
         }
       }
-    }
     `;

@@ -1,7 +1,7 @@
-
-import LoginForm from "./LoginForm"
 import styled from 'styled-components';
+
 import Logo from "../../ui/Title";
+import LoginForm from "./LoginForm"
 
 const LoginPage = () => {
 

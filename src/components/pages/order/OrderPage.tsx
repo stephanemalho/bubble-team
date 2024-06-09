@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import Navbar from "./navbar/Navbar";
 import Main from "./main/Main";
 

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-import { Product, noMenu } from '../../../../fakeData/fakeMenu'; 
+import { Product, noMenu } from '../../../../fakeData/fakeMenu';
 
 import HeroSection from './Hero/HeroSection';
 import Banner from './Banner/Banner';
-import MenuList from './Menu';
+import MenuList from './Menu/Menu';
 
 export default function Main() {
   const [selectedCard, setSelectedCard] = useState<Product>(noMenu[0]);
@@ -15,7 +15,7 @@ export default function Main() {
 
   return (
     <MainStyled>
-      <HeroSection selectedCard={selectedCard} isBasketOpen={isBasketOpen}/>
+      <HeroSection selectedCard={selectedCard} isBasketOpen={isBasketOpen} />
       <Banner />
       <MenuList onCardHover={setSelectedCard} />
     </MainStyled>

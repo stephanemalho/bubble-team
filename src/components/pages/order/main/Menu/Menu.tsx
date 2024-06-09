@@ -1,14 +1,16 @@
 import { memo, useState } from "react";
 import styled from "styled-components";
 import { TbShoppingBag } from "react-icons/tb";
-import { fakeMenu2, noMenu, Product } from "../../../../fakeData/fakeMenu";
-import { formatPrice } from "../../../../utils/math";
-import Card from "../../../ui/Card";
-import PrimaryButton from "../../../ui/PrimaryButton";
+
+import { fakeMenu2, noMenu, Product } from "../../../../../fakeData/fakeMenu";
+
+import Card from "../../../../ui/Card";
 import CardItem from "./CardItem/CardItem";
+import { formatPrice } from "../../../../../utils/math";
+import PrimaryButton from "../../../../ui/PrimaryButton";
 
 type MenuListProps = {
-  onCardHover: (item: Product ) => void;
+  onCardHover: (item: Product) => void;
 };
 
 export default function MenuList({ onCardHover }: MenuListProps) {
@@ -31,7 +33,7 @@ export default function MenuList({ onCardHover }: MenuListProps) {
           <CardMemo item={item}>
             <CardItem<Product>
               item={{ ...item, topDescription: formatPrice(item.price) }}
-              renderBottomDescription={() => <PrimaryButton Icon={<TbShoppingBag size={20}/>} />}
+              renderBottomDescription={() => <PrimaryButton Icon={<TbShoppingBag size={20} />} />}
             />
           </CardMemo>
         </CardWrapper>

@@ -1,10 +1,12 @@
 import styled from "styled-components";
-import { theme } from "../../../../../assets/theme";
-import { Product } from "../../../../../fakeData/fakeMenu";
+
+import { Product } from "../../../../../../fakeData/fakeMenu";
+
+import { theme } from "../../../../../../assets/theme";
 
 export function CardDescription<T extends Product>(title: string, topDescription: string | undefined, renderBottomDescription: (item: T) => React.ReactNode, item: T) {
   return (
-    <CardDescriptionStyled >
+    <CardDescriptionStyled>
       <div className="title">{title}</div>
       <div className="description">
         <div>{topDescription}</div>

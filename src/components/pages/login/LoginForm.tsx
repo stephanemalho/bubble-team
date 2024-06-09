@@ -2,10 +2,12 @@ import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
 import styled from "styled-components";
+
 import TitleForm from "./TitleForm";
-import { theme } from "../../../assets/theme";
 import Input from "../../ui/Input";
+
 import { LOGIN_PAGE } from "../../../constant/loginPage";
+import { theme } from "../../../assets/theme";
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");

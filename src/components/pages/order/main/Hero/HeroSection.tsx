@@ -1,5 +1,7 @@
-import { Product } from "../../../../../fakeData/fakeMenu";
 import styled from "styled-components";
+
+import { Product } from "../../../../../fakeData/fakeMenu";
+
 import ProductDescription from "./SelectedDescription/ProductDescription";
 import Basket from "./Basket/Basket";
 

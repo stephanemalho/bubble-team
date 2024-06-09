@@ -1,7 +1,9 @@
 import styled from "styled-components";
-import { Product } from "../../../../../fakeData/fakeMenu";
-import { CardDescription } from "./CardDescription";
+
+import { Product } from "../../../../../../fakeData/fakeMenu";
+
 import { CardImage } from "./CardImage";
+import { CardDescription } from "./CardDescription";
 
 export type CardItemProps<T extends Product> = {
   item: T;
