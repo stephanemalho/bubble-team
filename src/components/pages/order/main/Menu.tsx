@@ -7,11 +7,11 @@ import Card from "../../../ui/Card";
 import PrimaryButton from "../../../ui/PrimaryButton";
 import CardItem from "./CardItem/CardItem";
 
-type MenuProps = {
+type MenuListProps = {
   onCardHover: (item: Product ) => void;
 };
 
-export default function Menu({ onCardHover }: MenuProps) {
+export default function MenuList({ onCardHover }: MenuListProps) {
   const [menu, setMenu] = useState<Product[]>(fakeMenu2);
 
   !menu && console.log("Menu rendered", setMenu);
@@ -19,7 +19,7 @@ export default function Menu({ onCardHover }: MenuProps) {
   const CardMemo = memo(Card);
 
   return (
-    <MenuStyled>
+    <MenuListStyled>
       {menu.map((item, index) => (
         <CardWrapper
           key={item.id}
@@ -36,11 +36,11 @@ export default function Menu({ onCardHover }: MenuProps) {
           </CardMemo>
         </CardWrapper>
       ))}
-    </MenuStyled>
+    </MenuListStyled>
   );
 }
 
-const MenuStyled = styled.div`
+const MenuListStyled = styled.div`
   position: relative;
   width: 100%;
   display: flex;

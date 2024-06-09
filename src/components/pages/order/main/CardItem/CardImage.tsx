@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export function CardImage(imageSource: string, title: string) {
   return (
-    <CardImageStyled className="image">
+    <CardImageStyled>
       <img src={imageSource} alt={title} />
     </CardImageStyled>
   );

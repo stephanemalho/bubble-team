@@ -7,8 +7,8 @@ export function CardDescription<T extends Product>(title: string, topDescription
     <CardDescriptionStyled >
       <div className="title">{title}</div>
       <div className="description">
-        <div className="top-description">{topDescription}</div>
-        <div className="bottom-description">{renderBottomDescription(item)}</div>
+        <div>{topDescription}</div>
+        <div>{renderBottomDescription(item)}</div>
       </div>
     </CardDescriptionStyled>
   );
