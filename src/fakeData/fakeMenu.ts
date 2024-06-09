@@ -24,62 +24,7 @@ export const noMenu = [
   },
 ];
 
-export const fakeMenu1: Product[] = [
-  {
-    id: 1,
-    imageSource: "/images/bubble-tea-masala.png",
-    mainTitle: "Thé traditionnel",
-    title: "Oolong cha",
-    price: 5.297,
-    quantity: 0,
-    isAvailable: true,
-    isAdvertised: false,
-    description: "Un thé Oolong traditionnel avec une saveur unique.",
-    isHot: true,
-    ingredients: ["Thé Oolong", "Eau", "Sucre"],
-  },
-  {
-    id: 2,
-    imageSource: "/images/tea-herbal.png",
-    mainTitle: "Thé aux herbes",
-    title: "Burger 2",
-    price: 7.556,
-    quantity: 0,
-    isAvailable: true,
-    isAdvertised: false,
-    description: "Un délicieux burger fait avec des ingrédients frais.",
-    isHot: false,
-    ingredients: ["Pain", "Viande", "Laitue", "Tomate", "Fromage"],
-  },
-];
-
-export const fakeMenu2: Product[] = [
-  {
-    id: 1,
-    imageSource: "/images/bubble-tea-masala.png",
-    mainTitle: "Thé aux herbes",
-    title: "Tea Masala",
-    price: 5.598,
-    quantity: 0,
-    isAvailable: true,
-    isAdvertised: false,
-    description: "Un thé masala épicé et savoureux, parfait pour les amateurs de thé.",
-    isHot: true,
-    ingredients: ["Thé noir", "Épices masala", "Lait", "Sucre"],
-  },
-  {
-    id: 2,
-    imageSource: "/images/tea-herbal.png",
-    mainTitle: "Thé traditionnel",
-    title: "Herbal Tea",
-    price: 5.4985,
-    quantity: 0,
-    isAvailable: true,
-    isAdvertised: false,
-    description: "Un thé aux herbes apaisant, idéal pour se détendre.",
-    isHot: true,
-    ingredients: ["Mélange d'herbes", "Eau", "Miel"],
-  },
+export const fakeCake: Product[] = [
   {
     id: 3,
     imageSource: "/images/green-tea-cake.png",
@@ -105,6 +50,36 @@ export const fakeMenu2: Product[] = [
     description: "Un gâteau au matcha délicat et savoureux.",
     isHot: false,
     ingredients: ["Farine", "Sucre", "Matcha", "Oeufs", "Beurre"],
+  },
+   
+];
+
+export const fakeTea: Product[] = [
+  {
+    id: 1,
+    imageSource: "/images/bubble-tea-masala.png",
+    mainTitle: "Thé aux herbes",
+    title: "Tea peach",
+    price: 5.598,
+    quantity: 0,
+    isAvailable: true,
+    isAdvertised: false,
+    description: "Un thé masala épicé et savoureux, parfait pour les amateurs de thé.",
+    isHot: false,
+    ingredients: ["Thé noir", "Épices masala", "Lait", "Sucre"],
+  },
+  {
+    id: 2,
+    imageSource: "/images/tea-herbal.png",
+    mainTitle: "Thé traditionnel",
+    title: "Herbal Tea",
+    price: 5.4985,
+    quantity: 0,
+    isAvailable: true,
+    isAdvertised: false,
+    description: "Un thé aux herbes apaisant, idéal pour se détendre.",
+    isHot: true,
+    ingredients: ["Mélange d'herbes", "Eau", "Miel"],
   },
   {
     id: 5,
