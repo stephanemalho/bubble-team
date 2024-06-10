@@ -4,7 +4,7 @@ import { TOAST_ADMIN } from '../../../constant/loginPage';
 
 export const toastProperties = {
   icon: FaCircleInfo,
-  position: "bottom-right" as ToastPosition, // Explicitly cast the position to ToastPosition
+  position: "bottom-right" as ToastPosition,
   autoClose: 2200,
   hideProgressBar: false,
   closeOnClick: true,
